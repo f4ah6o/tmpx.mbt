@@ -1,0 +1,261 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "f4ah6o/tmpx/tmpx"
+
+// Values
+pub fn a(Array[Attr], Array[Node]) -> Node
+
+pub fn action(String) -> Attr
+
+pub fn aria(String, String) -> Attr
+
+pub fn article(Array[Attr], Array[Node]) -> Node
+
+pub fn aside(Array[Attr], Array[Node]) -> Node
+
+pub fn attr(String, String) -> Attr
+
+pub fn body(Array[Attr], Array[Node]) -> Node
+
+pub fn bool_attr(String) -> Attr
+
+pub fn br() -> Node
+
+pub fn button(Array[Attr], Array[Node]) -> Node
+
+pub fn charset(String) -> Attr
+
+pub fn class_(String) -> Attr
+
+pub fn class_list(Array[String]) -> Attr
+
+pub fn code(Array[Attr], Array[Node]) -> Node
+
+pub fn content(String) -> Attr
+
+pub fn data_attr(String, String) -> Attr
+
+pub fn disabled() -> Attr
+
+pub fn div(Array[Attr], Array[Node]) -> Node
+
+pub fn element(Tag, Array[Attr], Array[Node]) -> Node
+
+pub fn em(Array[Attr], Array[Node]) -> Node
+
+pub fn footer(Array[Attr], Array[Node]) -> Node
+
+pub fn for_(String) -> Attr
+
+pub fn form(Array[Attr], Array[Node]) -> Node
+
+pub fn fragment(Array[Node]) -> Node
+
+pub fn h1(Array[Attr], Array[Node]) -> Node
+
+pub fn h2(Array[Attr], Array[Node]) -> Node
+
+pub fn h3(Array[Attr], Array[Node]) -> Node
+
+pub fn h4(Array[Attr], Array[Node]) -> Node
+
+pub fn h5(Array[Attr], Array[Node]) -> Node
+
+pub fn h6(Array[Attr], Array[Node]) -> Node
+
+pub fn head(Array[Attr], Array[Node]) -> Node
+
+pub fn header_(Array[Attr], Array[Node]) -> Node
+
+pub fn hr(Array[Attr]) -> Node
+
+pub fn href(String) -> Attr
+
+pub fn html_(Array[Attr], Array[Node]) -> Node
+
+pub fn hx_delete(String) -> Attr
+
+pub fn hx_get(String) -> Attr
+
+pub fn hx_include(String) -> Attr
+
+pub fn hx_post(String) -> Attr
+
+pub fn hx_push_url(Bool) -> Attr
+
+pub fn hx_put(String) -> Attr
+
+pub fn hx_swap(HxSwap) -> Attr
+
+pub fn hx_swap_oob(style? : HxSwap) -> Attr
+
+pub fn hx_target(String) -> Attr
+
+pub fn hx_trigger(String) -> Attr
+
+pub fn hx_vals(String) -> Attr
+
+pub fn id_(String) -> Attr
+
+pub fn img(Array[Attr]) -> Node
+
+pub fn input_(Array[Attr]) -> Node
+
+pub fn label(Array[Attr], Array[Node]) -> Node
+
+pub fn lang_attr(String) -> Attr
+
+pub fn li(Array[Attr], Array[Node]) -> Node
+
+pub fn link(Array[Attr]) -> Node
+
+pub fn main_(Array[Attr], Array[Node]) -> Node
+
+pub fn meta(Array[Attr]) -> Node
+
+pub fn method_(String) -> Attr
+
+pub fn name_(String) -> Attr
+
+pub fn nav(Array[Attr], Array[Node]) -> Node
+
+pub fn ol(Array[Attr], Array[Node]) -> Node
+
+pub fn option(Array[Attr], Array[Node]) -> Node
+
+pub fn p(Array[Attr], Array[Node]) -> Node
+
+pub fn placeholder(String) -> Attr
+
+pub fn pre(Array[Attr], Array[Node]) -> Node
+
+pub fn raw_html(String) -> Node
+
+pub fn rel(String) -> Attr
+
+pub fn render(Node) -> String
+
+pub fn render_nodes(Array[Node]) -> String
+
+pub fn script(Array[Attr], Array[Node]) -> Node
+
+pub fn section(Array[Attr], Array[Node]) -> Node
+
+pub fn select(Array[Attr], Array[Node]) -> Node
+
+pub fn selected() -> Attr
+
+pub fn small(Array[Attr], Array[Node]) -> Node
+
+pub fn span(Array[Attr], Array[Node]) -> Node
+
+pub fn src(String) -> Attr
+
+pub fn strong(Array[Attr], Array[Node]) -> Node
+
+pub fn style_(Array[Attr], Array[Node]) -> Node
+
+pub fn text(String) -> Node
+
+pub fn textarea(Array[Attr], Array[Node]) -> Node
+
+pub fn title(Array[Attr], Array[Node]) -> Node
+
+pub fn type_(String) -> Attr
+
+pub fn ul(Array[Attr], Array[Node]) -> Node
+
+pub fn value_(String) -> Attr
+
+pub fn void_element(Tag, Array[Attr]) -> Node
+
+// Errors
+
+// Types and methods
+pub enum Attr {
+  KeyVal(String, String)
+  Bool(String)
+  ClassList(Array[String])
+}
+pub impl Eq for Attr
+pub impl Show for Attr
+
+pub(all) enum HxSwap {
+  InnerHTML
+  OuterHTML
+  BeforeBegin
+  AfterBegin
+  BeforeEnd
+  AfterEnd
+  Delete
+  None
+  Morph
+}
+pub fn HxSwap::to_string(Self) -> String
+pub impl Eq for HxSwap
+pub impl Show for HxSwap
+
+pub enum Node {
+  Element(Tag, Array[Attr], Array[Node])
+  VoidElement(Tag, Array[Attr])
+  Text(String)
+  Raw(String)
+  Fragment(Array[Node])
+}
+pub impl Eq for Node
+pub impl Show for Node
+
+pub enum Tag {
+  Html
+  Head
+  Body
+  Title
+  Meta
+  Link
+  Style
+  Script
+  Div
+  Span
+  Section
+  Header
+  Main
+  Aside
+  Footer
+  Nav
+  Article
+  H1
+  H2
+  H3
+  H4
+  H5
+  H6
+  P
+  Small
+  Strong
+  Em
+  Ul
+  Ol
+  Li
+  A
+  Button
+  Form
+  Label
+  Input
+  Textarea
+  Select
+  Option
+  Img
+  Pre
+  Code
+  Hr
+  Br
+  Custom(String)
+}
+pub fn Tag::is_void(Self) -> Bool
+pub fn Tag::to_string(Self) -> String
+pub impl Eq for Tag
+pub impl Show for Tag
+
+// Type aliases
+
+// Traits
+
