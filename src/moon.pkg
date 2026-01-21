@@ -1,3 +1,0 @@
-import "test" {
-  "f4ah6o/tmpx/src/tmpx" as @tmpx_core
-}
