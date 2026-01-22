@@ -8,7 +8,11 @@ pub enum Node {
 } derive(Show, Eq)
 
 ///|
-fn Tag::element(self : Tag, attrs : Array[Attr], children : Array[Node]) -> Node {
+fn Tag::element(
+  self : Tag,
+  attrs : Array[Attr],
+  children : Array[Node],
+) -> Node {
   if self.is_void() {
     Node::VoidElement(self, attrs)
   } else {
