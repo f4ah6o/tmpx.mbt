@@ -24,8 +24,8 @@ fn render_kv_attr(sb : StringBuilder, name : String, value : String) -> Unit {
 }
 
 ///|
-fn render_attr(sb : StringBuilder, attr : Attr) -> Unit {
-  match attr {
+fn Attr::render_into(self : Attr, sb : StringBuilder) -> Unit {
+  match self {
     Attr::KeyVal(name, value) => render_kv_attr(sb, name, value)
     Attr::Bool(name) => {
       sb.write_char(' ')
@@ -41,20 +41,20 @@ fn render_attr(sb : StringBuilder, attr : Attr) -> Unit {
 }
 
 ///|
-fn render_attrs(sb : StringBuilder, attrs : Array[Attr]) -> Unit {
+fn render_attrs(sb : StringBuilder, attrs : ArrayView[Attr]) -> Unit {
   for attr in attrs {
-    render_attr(sb, attr)
+    attr.render_into(sb)
   }
 }
 
 ///|
-fn render_node(sb : StringBuilder, node : Node) -> Unit {
-  match node {
+fn Node::render_into(self : Node, sb : StringBuilder) -> Unit {
+  match self {
     Node::Text(content) => sb.write_string(escape_html(content))
     Node::Raw(content) => sb.write_string(content)
     Node::Fragment(children) =>
       for child in children {
-        render_node(sb, child)
+        child.render_into(sb)
       }
     Node::Element(tag, attrs, children) => {
       sb.write_char('<')
@@ -62,7 +62,7 @@ fn render_node(sb : StringBuilder, node : Node) -> Unit {
       render_attrs(sb, attrs)
       sb.write_char('>')
       for child in children {
-        render_node(sb, child)
+        child.render_into(sb)
       }
       sb.write_string("</")
       sb.write_string(tag.to_string())
@@ -80,7 +80,7 @@ fn render_node(sb : StringBuilder, node : Node) -> Unit {
 ///|
 pub fn render(node : Node) -> String {
   let sb = StringBuilder::new()
-  render_node(sb, node)
+  node.render_into(sb)
   sb.to_string()
 }
 
@@ -88,7 +88,7 @@ pub fn render(node : Node) -> String {
 pub fn render_nodes(nodes : Array[Node]) -> String {
   let sb = StringBuilder::new()
   for node in nodes {
-    render_node(sb, node)
+    node.render_into(sb)
   }
   sb.to_string()
 }

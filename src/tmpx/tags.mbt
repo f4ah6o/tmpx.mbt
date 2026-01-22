@@ -1,214 +1,214 @@
 ///|
 pub fn html_(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Html, attrs, children)
+  Tag::Html.element(attrs, children)
 }
 
 ///|
 pub fn head(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Head, attrs, children)
+  Tag::Head.element(attrs, children)
 }
 
 ///|
 pub fn body(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Body, attrs, children)
+  Tag::Body.element(attrs, children)
 }
 
 ///|
 pub fn title(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Title, attrs, children)
+  Tag::Title.element(attrs, children)
 }
 
 ///|
 pub fn meta(attrs : Array[Attr]) -> Node {
-  void_element(Tag::Meta, attrs)
+  Tag::Meta.void_element(attrs)
 }
 
 ///|
 pub fn link(attrs : Array[Attr]) -> Node {
-  void_element(Tag::Link, attrs)
+  Tag::Link.void_element(attrs)
 }
 
 ///|
 pub fn style_(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Style, attrs, children)
+  Tag::Style.element(attrs, children)
 }
 
 ///|
 pub fn script(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Script, attrs, children)
+  Tag::Script.element(attrs, children)
 }
 
 ///|
 pub fn div(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Div, attrs, children)
+  Tag::Div.element(attrs, children)
 }
 
 ///|
 pub fn span(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Span, attrs, children)
+  Tag::Span.element(attrs, children)
 }
 
 ///|
 pub fn section(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Section, attrs, children)
+  Tag::Section.element(attrs, children)
 }
 
 ///|
 pub fn header_(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Header, attrs, children)
+  Tag::Header.element(attrs, children)
 }
 
 ///|
 pub fn main_(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Main, attrs, children)
+  Tag::Main.element(attrs, children)
 }
 
 ///|
 pub fn aside(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Aside, attrs, children)
+  Tag::Aside.element(attrs, children)
 }
 
 ///|
 pub fn footer(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Footer, attrs, children)
+  Tag::Footer.element(attrs, children)
 }
 
 ///|
 pub fn nav(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Nav, attrs, children)
+  Tag::Nav.element(attrs, children)
 }
 
 ///|
 pub fn article(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Article, attrs, children)
+  Tag::Article.element(attrs, children)
 }
 
 ///|
 pub fn h1(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::H1, attrs, children)
+  Tag::H1.element(attrs, children)
 }
 
 ///|
 pub fn h2(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::H2, attrs, children)
+  Tag::H2.element(attrs, children)
 }
 
 ///|
 pub fn h3(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::H3, attrs, children)
+  Tag::H3.element(attrs, children)
 }
 
 ///|
 pub fn h4(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::H4, attrs, children)
+  Tag::H4.element(attrs, children)
 }
 
 ///|
 pub fn h5(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::H5, attrs, children)
+  Tag::H5.element(attrs, children)
 }
 
 ///|
 pub fn h6(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::H6, attrs, children)
+  Tag::H6.element(attrs, children)
 }
 
 ///|
 pub fn p(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::P, attrs, children)
+  Tag::P.element(attrs, children)
 }
 
 ///|
 pub fn small(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Small, attrs, children)
+  Tag::Small.element(attrs, children)
 }
 
 ///|
 pub fn strong(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Strong, attrs, children)
+  Tag::Strong.element(attrs, children)
 }
 
 ///|
 pub fn em(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Em, attrs, children)
+  Tag::Em.element(attrs, children)
 }
 
 ///|
 pub fn ul(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Ul, attrs, children)
+  Tag::Ul.element(attrs, children)
 }
 
 ///|
 pub fn ol(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Ol, attrs, children)
+  Tag::Ol.element(attrs, children)
 }
 
 ///|
 pub fn li(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Li, attrs, children)
+  Tag::Li.element(attrs, children)
 }
 
 ///|
 pub fn a(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::A, attrs, children)
+  Tag::A.element(attrs, children)
 }
 
 ///|
 pub fn button(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Button, attrs, children)
+  Tag::Button.element(attrs, children)
 }
 
 ///|
 pub fn form(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Form, attrs, children)
+  Tag::Form.element(attrs, children)
 }
 
 ///|
 pub fn label(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Label, attrs, children)
+  Tag::Label.element(attrs, children)
 }
 
 ///|
 pub fn input_(attrs : Array[Attr]) -> Node {
-  void_element(Tag::Input, attrs)
+  Tag::Input.void_element(attrs)
 }
 
 ///|
 pub fn textarea(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Textarea, attrs, children)
+  Tag::Textarea.element(attrs, children)
 }
 
 ///|
 pub fn select(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Select, attrs, children)
+  Tag::Select.element(attrs, children)
 }
 
 ///|
 pub fn option(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Option, attrs, children)
+  Tag::Option.element(attrs, children)
 }
 
 ///|
 pub fn img(attrs : Array[Attr]) -> Node {
-  void_element(Tag::Img, attrs)
+  Tag::Img.void_element(attrs)
 }
 
 ///|
 pub fn pre(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Pre, attrs, children)
+  Tag::Pre.element(attrs, children)
 }
 
 ///|
 pub fn code(attrs : Array[Attr], children : Array[Node]) -> Node {
-  element(Tag::Code, attrs, children)
+  Tag::Code.element(attrs, children)
 }
 
 ///|
 pub fn hr(attrs : Array[Attr]) -> Node {
-  void_element(Tag::Hr, attrs)
+  Tag::Hr.void_element(attrs)
 }
 
 ///|
 pub fn br() -> Node {
-  void_element(Tag::Br, [])
+  Tag::Br.void_element([])
 }
