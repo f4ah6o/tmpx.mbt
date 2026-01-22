@@ -52,11 +52,10 @@ fn render_node(sb : StringBuilder, node : Node) -> Unit {
   match node {
     Node::Text(content) => sb.write_string(escape_html(content))
     Node::Raw(content) => sb.write_string(content)
-    Node::Fragment(children) => {
+    Node::Fragment(children) =>
       for child in children {
         render_node(sb, child)
       }
-    }
     Node::Element(tag, attrs, children) => {
       sb.write_char('<')
       sb.write_string(tag.to_string())
