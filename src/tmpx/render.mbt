@@ -15,15 +15,18 @@ fn escape_html(text : String) -> String {
 }
 
 ///|
+fn render_kv_attr(sb : StringBuilder, name : String, value : String) -> Unit {
+  sb.write_char(' ')
+  sb.write_string(name)
+  sb.write_string("=\"")
+  sb.write_string(escape_html(value))
+  sb.write_char('"')
+}
+
+///|
 fn render_attr(sb : StringBuilder, attr : Attr) -> Unit {
   match attr {
-    Attr::KeyVal(name, value) => {
-      sb.write_char(' ')
-      sb.write_string(name)
-      sb.write_string("=\"")
-      sb.write_string(escape_html(value))
-      sb.write_char('"')
-    }
+    Attr::KeyVal(name, value) => render_kv_attr(sb, name, value)
     Attr::Bool(name) => {
       sb.write_char(' ')
       sb.write_string(name)
@@ -31,11 +34,7 @@ fn render_attr(sb : StringBuilder, attr : Attr) -> Unit {
     Attr::ClassList(values) => {
       let class_value = values.filter(fn(v) { v != "" }).join(" ")
       if class_value != "" {
-        sb.write_char(' ')
-        sb.write_string("class")
-        sb.write_string("=\"")
-        sb.write_string(escape_html(class_value))
-        sb.write_char('"')
+        render_kv_attr(sb, "class", class_value)
       }
     }
   }
