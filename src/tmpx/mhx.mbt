@@ -190,11 +190,11 @@ pub fn mx_swap(style : MxSwap) -> Attr {
 /// e.g., "innerHTML swap:500ms settle:1s scroll:top"
 pub fn mx_swap_extended(
   style : MxSwap,
-  swap_delay~ : Int = 0,
-  settle_delay~ : Int = 0,
-  scroll~ : String = "",
-  show~ : String = "",
-  focus_scroll~ : Bool = false
+  swap_delay? : Int = 0,
+  settle_delay? : Int = 0,
+  scroll? : String = "",
+  show? : String = "",
+  focus_scroll? : Bool = false,
 ) -> Attr {
   let mut value = style.to_string()
   if swap_delay > 0 {
@@ -436,7 +436,7 @@ pub fn mx_trigger_change() -> Attr {
 
 ///|
 /// Create a keyup trigger with optional changed modifier
-pub fn mx_trigger_keyup(changed~ : Bool = false) -> Attr {
+pub fn mx_trigger_keyup(changed? : Bool = false) -> Attr {
   let value = if changed { "keyup changed" } else { "keyup" }
   attr("mx-trigger", value)
 }
@@ -455,7 +455,7 @@ pub fn mx_trigger_revealed() -> Attr {
 
 ///|
 /// Create an intersect trigger (fires on intersection observer)
-pub fn mx_trigger_intersect(threshold~ : Double = 0.0) -> Attr {
+pub fn mx_trigger_intersect(threshold? : Double = 0.0) -> Attr {
   let value = if threshold > 0.0 {
     "intersect threshold:" + threshold.to_string()
   } else {
