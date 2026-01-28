@@ -98,6 +98,11 @@ pub fn Tag::to_string(self : Tag) -> String {
 }
 
 ///|
+pub fn Tag::custom(name : String) -> Tag {
+  Custom(name)
+}
+
+///|
 pub fn Tag::is_void(self : Tag) -> Bool {
   match self {
     Meta | Link | Input | Img | Hr | Br => true
