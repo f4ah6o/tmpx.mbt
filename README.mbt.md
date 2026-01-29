@@ -1,4 +1,7 @@
 # tmpx.mbt
+<!-- bdg:begin -->
+![moonbit](https://img.shields.io/badge/moonbit-f4ah6o/tmpx-informational)
+<!-- bdg:end -->
 
 Typed, functional HTML template DSL for MoonBit.
 
@@ -98,29 +101,35 @@ let form = @tmpx_core.form(
 
 ## Available HTML Tags
 
-### Document Structure
-- `html_`, `head`, `body`, `title`
+### Document & Metadata
+- `html_`, `head`, `body`, `title`, `base`, `link`, `meta`, `style_`, `script`, `noscript`
 
-### Metadata
-- `meta`, `link`, `style_`, `script`
+### Sectioning & Headings
+- `address`, `article`, `aside`, `footer`, `header_`, `h1`-`h6`, `hgroup`, `main_`, `nav`, `section`, `search`
 
-### Sections
-- `div`, `span`, `section`, `header_`, `main_`, `aside`, `footer`, `nav`, `article`
+### Text Content
+- `blockquote`, `div`, `dl`, `dt`, `dd`, `figure`, `figcaption`, `hr`, `li`, `menu`, `ol`, `p`, `pre`, `ul`
 
-### Headings
-- `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
+### Inline Text Semantics
+- `a`, `abbr`, `b`, `bdi`, `bdo`, `br`, `cite`, `code`, `data`, `dfn`, `em`, `i`, `kbd`, `mark`, `q`, `ruby`, `rp`, `rt`, `s`, `samp`, `small`, `span`, `strong`, `sub`, `sup`, `time`, `u`, `var_`, `wbr`
 
-### Text
-- `p`, `small`, `strong`, `em`, `pre`, `code`
+### Media & Embedded
+- `img`, `picture`, `source`, `track`, `audio`, `video`, `map`, `area`, `canvas`, `iframe`, `embed`, `object_`, `param`, `svg`, `math`
 
-### Lists
-- `ul`, `ol`, `li`
+### Edits
+- `del`, `ins`
 
-### Interactive
-- `a`, `button`, `form`, `label`, `input_`, `textarea`, `select`, `option`
+### Tables
+- `table`, `caption`, `colgroup`, `col`, `thead`, `tbody`, `tfoot`, `tr`, `th`, `td`
 
-### Media/Other
-- `img`, `hr`, `br`
+### Forms
+- `form`, `input_`, `textarea`, `select`, `option`, `optgroup`, `datalist`, `fieldset`, `legend`, `label`, `button`, `output`, `progress`, `meter`
+
+### Interactive & Web Components
+- `details`, `summary`, `dialog`, `slot`, `template`
+
+### Legacy (obsolete/deprecated)
+- `acronym`, `applet`, `basefont`, `bgsound`, `big`, `blink`, `center`, `dir`, `font`, `frame`, `frameset`, `isindex`, `keygen`, `listing`, `marquee`, `menuitem`, `multicol`, `nextid`, `nobr`, `noembed`, `noframes`, `plaintext`, `spacer`, `strike`, `tt`, `xmp`
 
 ## htmx Integration
 
@@ -190,3 +199,5 @@ let view = @tmpx_core.div([
 ## License
 
 Apache-2.0
+
+

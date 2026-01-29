@@ -1,6 +1,6 @@
 {
   "name": "f4ah6o/tmpx",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "deps": {
     "moonbitlang/quickcheck": "0.9.10",
     "f4ah6o/mhx-spec": { "path": "../mhx-spec.mbt" }

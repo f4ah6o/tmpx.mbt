@@ -4,7 +4,17 @@ package "f4ah6o/tmpx/tmpx"
 // Values
 pub fn a(Array[Attr], Array[Node]) -> Node
 
+pub fn abbr(Array[Attr], Array[Node]) -> Node
+
+pub fn acronym(Array[Attr], Array[Node]) -> Node
+
 pub fn action(String) -> Attr
+
+pub fn address(Array[Attr], Array[Node]) -> Node
+
+pub fn applet(Array[Attr], Array[Node]) -> Node
+
+pub fn area(Array[Attr]) -> Node
 
 pub fn aria(String, String) -> Attr
 
@@ -14,6 +24,26 @@ pub fn aside(Array[Attr], Array[Node]) -> Node
 
 pub fn attr(String, String) -> Attr
 
+pub fn audio(Array[Attr], Array[Node]) -> Node
+
+pub fn b(Array[Attr], Array[Node]) -> Node
+
+pub fn base(Array[Attr]) -> Node
+
+pub fn basefont(Array[Attr]) -> Node
+
+pub fn bdi(Array[Attr], Array[Node]) -> Node
+
+pub fn bdo(Array[Attr], Array[Node]) -> Node
+
+pub fn bgsound(Array[Attr]) -> Node
+
+pub fn big(Array[Attr], Array[Node]) -> Node
+
+pub fn blink(Array[Attr], Array[Node]) -> Node
+
+pub fn blockquote(Array[Attr], Array[Node]) -> Node
+
 pub fn body(Array[Attr], Array[Node]) -> Node
 
 pub fn bool_attr(String) -> Attr
@@ -22,7 +52,15 @@ pub fn br() -> Node
 
 pub fn button(Array[Attr], Array[Node]) -> Node
 
+pub fn canvas(Array[Attr], Array[Node]) -> Node
+
+pub fn caption(Array[Attr], Array[Node]) -> Node
+
+pub fn center(Array[Attr], Array[Node]) -> Node
+
 pub fn charset(String) -> Attr
+
+pub fn cite(Array[Attr], Array[Node]) -> Node
 
 pub fn class_(String) -> Attr
 
@@ -30,17 +68,51 @@ pub fn class_list(Array[String]) -> Attr
 
 pub fn code(Array[Attr], Array[Node]) -> Node
 
+pub fn col(Array[Attr]) -> Node
+
+pub fn colgroup(Array[Attr], Array[Node]) -> Node
+
 pub fn content(String) -> Attr
 
+pub fn data(Array[Attr], Array[Node]) -> Node
+
 pub fn data_attr(String, String) -> Attr
+
+pub fn datalist(Array[Attr], Array[Node]) -> Node
+
+pub fn dd(Array[Attr], Array[Node]) -> Node
+
+pub fn del(Array[Attr], Array[Node]) -> Node
+
+pub fn details(Array[Attr], Array[Node]) -> Node
+
+pub fn dfn(Array[Attr], Array[Node]) -> Node
+
+pub fn dialog(Array[Attr], Array[Node]) -> Node
+
+pub fn dir(Array[Attr], Array[Node]) -> Node
 
 pub fn disabled() -> Attr
 
 pub fn div(Array[Attr], Array[Node]) -> Node
 
+pub fn dl(Array[Attr], Array[Node]) -> Node
+
+pub fn dt(Array[Attr], Array[Node]) -> Node
+
 pub fn element(Tag, Array[Attr], Array[Node]) -> Node
 
 pub fn em(Array[Attr], Array[Node]) -> Node
+
+pub fn embed(Array[Attr]) -> Node
+
+pub fn fieldset(Array[Attr], Array[Node]) -> Node
+
+pub fn figcaption(Array[Attr], Array[Node]) -> Node
+
+pub fn figure(Array[Attr], Array[Node]) -> Node
+
+pub fn font(Array[Attr], Array[Node]) -> Node
 
 pub fn footer(Array[Attr], Array[Node]) -> Node
 
@@ -49,6 +121,10 @@ pub fn for_(String) -> Attr
 pub fn form(Array[Attr], Array[Node]) -> Node
 
 pub fn fragment(Array[Node]) -> Node
+
+pub fn frame(Array[Attr]) -> Node
+
+pub fn frameset(Array[Attr], Array[Node]) -> Node
 
 pub fn h1(Array[Attr], Array[Node]) -> Node
 
@@ -65,6 +141,8 @@ pub fn h6(Array[Attr], Array[Node]) -> Node
 pub fn head(Array[Attr], Array[Node]) -> Node
 
 pub fn header_(Array[Attr], Array[Node]) -> Node
+
+pub fn hgroup(Array[Attr], Array[Node]) -> Node
 
 pub fn hr(Array[Attr]) -> Node
 
@@ -94,39 +172,213 @@ pub fn hx_trigger(String) -> Attr
 
 pub fn hx_vals(String) -> Attr
 
+pub fn i(Array[Attr], Array[Node]) -> Node
+
 pub fn id_(String) -> Attr
+
+pub fn iframe(Array[Attr], Array[Node]) -> Node
 
 pub fn img(Array[Attr]) -> Node
 
 pub fn input_(Array[Attr]) -> Node
 
+pub fn ins(Array[Attr], Array[Node]) -> Node
+
+pub fn isindex(Array[Attr]) -> Node
+
+pub fn kbd(Array[Attr], Array[Node]) -> Node
+
+pub fn keygen(Array[Attr]) -> Node
+
 pub fn label(Array[Attr], Array[Node]) -> Node
 
 pub fn lang_attr(String) -> Attr
+
+pub fn legend(Array[Attr], Array[Node]) -> Node
 
 pub fn li(Array[Attr], Array[Node]) -> Node
 
 pub fn link(Array[Attr]) -> Node
 
+pub fn listing(Array[Attr], Array[Node]) -> Node
+
 pub fn main_(Array[Attr], Array[Node]) -> Node
+
+pub fn map(Array[Attr], Array[Node]) -> Node
+
+pub fn mark(Array[Attr], Array[Node]) -> Node
+
+pub fn marquee(Array[Attr], Array[Node]) -> Node
+
+pub fn math(Array[Attr], Array[Node]) -> Node
+
+pub fn menu(Array[Attr], Array[Node]) -> Node
+
+pub fn menuitem(Array[Attr]) -> Node
 
 pub fn meta(Array[Attr]) -> Node
 
+pub fn meter(Array[Attr], Array[Node]) -> Node
+
 pub fn method_(String) -> Attr
+
+pub fn multicol(Array[Attr], Array[Node]) -> Node
+
+pub fn mx_boost(Bool) -> Attr
+
+pub fn mx_confirm(String) -> Attr
+
+pub fn mx_delete(String) -> Attr
+
+pub fn mx_disabled_elt(String) -> Attr
+
+pub fn mx_disinherit(String) -> Attr
+
+pub fn mx_encoding(String) -> Attr
+
+pub fn mx_ext(String) -> Attr
+
+pub fn mx_get(String) -> Attr
+
+pub fn mx_headers(String) -> Attr
+
+pub fn mx_include(String) -> Attr
+
+pub fn mx_indicator(String) -> Attr
+
+pub fn mx_inherit(String) -> Attr
+
+pub fn mx_params(String) -> Attr
+
+pub fn mx_patch(String) -> Attr
+
+pub fn mx_post(String) -> Attr
+
+pub fn mx_preserve() -> Attr
+
+pub fn mx_prompt(String) -> Attr
+
+pub fn mx_push_url(Bool) -> Attr
+
+pub fn mx_push_url_custom(String) -> Attr
+
+pub fn mx_put(String) -> Attr
+
+pub fn mx_replace_url(Bool) -> Attr
+
+pub fn mx_replace_url_custom(String) -> Attr
+
+pub fn mx_select(String) -> Attr
+
+pub fn mx_select_oob(String) -> Attr
+
+pub fn mx_sse_connect(String) -> Attr
+
+pub fn mx_sse_swap(String) -> Attr
+
+pub fn mx_swap(MxSwap) -> Attr
+
+pub fn mx_swap_extended(MxSwap, swap_delay? : Int, settle_delay? : Int, scroll? : String, show? : String, focus_scroll? : Bool) -> Attr
+
+pub fn mx_swap_oob(style? : MxSwap) -> Attr
+
+pub fn mx_swap_oob_select(MxSwap, String) -> Attr
+
+pub fn mx_sync(MxSync) -> Attr
+
+pub fn mx_sync_with(String, MxSync) -> Attr
+
+pub fn mx_target(String) -> Attr
+
+pub fn mx_target_selector(MxSelector) -> Attr
+
+pub fn mx_trigger(String) -> Attr
+
+pub fn mx_trigger_change() -> Attr
+
+pub fn mx_trigger_changed(String) -> Attr
+
+pub fn mx_trigger_click() -> Attr
+
+pub fn mx_trigger_consume(String) -> Attr
+
+pub fn mx_trigger_every(Int) -> Attr
+
+pub fn mx_trigger_filter(String, String) -> Attr
+
+pub fn mx_trigger_from(String, String) -> Attr
+
+pub fn mx_trigger_intersect(threshold? : Double) -> Attr
+
+pub fn mx_trigger_keyup(changed? : Bool) -> Attr
+
+pub fn mx_trigger_load() -> Attr
+
+pub fn mx_trigger_once(String) -> Attr
+
+pub fn mx_trigger_prevent(String) -> Attr
+
+pub fn mx_trigger_queue(String, MxSync) -> Attr
+
+pub fn mx_trigger_revealed() -> Attr
+
+pub fn mx_trigger_submit() -> Attr
+
+pub fn mx_trigger_target(String, String) -> Attr
+
+pub fn mx_trigger_with_debounce(String, Int) -> Attr
+
+pub fn mx_trigger_with_delay(String, Int) -> Attr
+
+pub fn mx_trigger_with_throttle(String, Int) -> Attr
+
+pub fn mx_validate(Bool) -> Attr
+
+pub fn mx_vals(String) -> Attr
+
+pub fn mx_ws_connect(String) -> Attr
+
+pub fn mx_ws_send() -> Attr
 
 pub fn name_(String) -> Attr
 
 pub fn nav(Array[Attr], Array[Node]) -> Node
 
+pub fn nextid(Array[Attr]) -> Node
+
+pub fn nobr(Array[Attr], Array[Node]) -> Node
+
+pub fn noembed(Array[Attr], Array[Node]) -> Node
+
+pub fn noframes(Array[Attr], Array[Node]) -> Node
+
+pub fn noscript(Array[Attr], Array[Node]) -> Node
+
+pub fn object_(Array[Attr], Array[Node]) -> Node
+
 pub fn ol(Array[Attr], Array[Node]) -> Node
+
+pub fn optgroup(Array[Attr], Array[Node]) -> Node
 
 pub fn option(Array[Attr], Array[Node]) -> Node
 
+pub fn output(Array[Attr], Array[Node]) -> Node
+
 pub fn p(Array[Attr], Array[Node]) -> Node
+
+pub fn param(Array[Attr]) -> Node
+
+pub fn picture(Array[Attr], Array[Node]) -> Node
 
 pub fn placeholder(String) -> Attr
 
+pub fn plaintext(Array[Attr], Array[Node]) -> Node
+
 pub fn pre(Array[Attr], Array[Node]) -> Node
+
+pub fn progress(Array[Attr], Array[Node]) -> Node
+
+pub fn q(Array[Attr], Array[Node]) -> Node
 
 pub fn raw_html(String) -> Node
 
@@ -136,7 +388,19 @@ pub fn render(Node) -> String
 
 pub fn render_nodes(Array[Node]) -> String
 
+pub fn rp(Array[Attr], Array[Node]) -> Node
+
+pub fn rt(Array[Attr], Array[Node]) -> Node
+
+pub fn ruby(Array[Attr], Array[Node]) -> Node
+
+pub fn s(Array[Attr], Array[Node]) -> Node
+
+pub fn samp(Array[Attr], Array[Node]) -> Node
+
 pub fn script(Array[Attr], Array[Node]) -> Node
+
+pub fn search(Array[Attr], Array[Node]) -> Node
 
 pub fn section(Array[Attr], Array[Node]) -> Node
 
@@ -144,29 +408,77 @@ pub fn select(Array[Attr], Array[Node]) -> Node
 
 pub fn selected() -> Attr
 
+pub fn slot(Array[Attr], Array[Node]) -> Node
+
 pub fn small(Array[Attr], Array[Node]) -> Node
+
+pub fn source(Array[Attr]) -> Node
+
+pub fn spacer(Array[Attr]) -> Node
 
 pub fn span(Array[Attr], Array[Node]) -> Node
 
 pub fn src(String) -> Attr
 
+pub fn strike(Array[Attr], Array[Node]) -> Node
+
 pub fn strong(Array[Attr], Array[Node]) -> Node
 
 pub fn style_(Array[Attr], Array[Node]) -> Node
+
+pub fn sub(Array[Attr], Array[Node]) -> Node
+
+pub fn summary(Array[Attr], Array[Node]) -> Node
+
+pub fn sup(Array[Attr], Array[Node]) -> Node
+
+pub fn svg(Array[Attr], Array[Node]) -> Node
+
+pub fn table(Array[Attr], Array[Node]) -> Node
+
+pub fn tbody(Array[Attr], Array[Node]) -> Node
+
+pub fn td(Array[Attr], Array[Node]) -> Node
+
+pub fn template(Array[Attr], Array[Node]) -> Node
 
 pub fn text(String) -> Node
 
 pub fn textarea(Array[Attr], Array[Node]) -> Node
 
+pub fn tfoot(Array[Attr], Array[Node]) -> Node
+
+pub fn th(Array[Attr], Array[Node]) -> Node
+
+pub fn thead(Array[Attr], Array[Node]) -> Node
+
+pub fn time(Array[Attr], Array[Node]) -> Node
+
 pub fn title(Array[Attr], Array[Node]) -> Node
 
+pub fn tr(Array[Attr], Array[Node]) -> Node
+
+pub fn track(Array[Attr]) -> Node
+
+pub fn tt(Array[Attr], Array[Node]) -> Node
+
 pub fn type_(String) -> Attr
+
+pub fn u(Array[Attr], Array[Node]) -> Node
 
 pub fn ul(Array[Attr], Array[Node]) -> Node
 
 pub fn value_(String) -> Attr
 
+pub fn var_(Array[Attr], Array[Node]) -> Node
+
+pub fn video(Array[Attr], Array[Node]) -> Node
+
 pub fn void_element(Tag, Array[Attr]) -> Node
+
+pub fn wbr(Array[Attr]) -> Node
+
+pub fn xmp(Array[Attr], Array[Node]) -> Node
 
 // Errors
 
@@ -194,6 +506,46 @@ pub fn HxSwap::to_string(Self) -> String
 pub impl Eq for HxSwap
 pub impl Show for HxSwap
 
+pub(all) enum MxSelector {
+  This
+  Body
+  Window
+  Document
+  Closest(String)
+  Find(String)
+  Next(String)
+  Previous(String)
+  Css(String)
+}
+pub fn MxSelector::to_string(Self) -> String
+pub impl Eq for MxSelector
+pub impl Show for MxSelector
+
+pub(all) enum MxSwap {
+  InnerHTML
+  OuterHTML
+  BeforeBegin
+  AfterBegin
+  BeforeEnd
+  AfterEnd
+  Delete
+  None
+}
+pub fn MxSwap::to_string(Self) -> String
+pub impl Eq for MxSwap
+pub impl Show for MxSwap
+
+pub(all) enum MxSync {
+  Drop
+  Replace
+  QueueFirst
+  QueueLast
+  QueueAll
+}
+pub fn MxSync::to_string(Self) -> String
+pub impl Eq for MxSync
+pub impl Show for MxSync
+
 pub enum Node {
   Element(Tag, Array[Attr], Array[Node])
   VoidElement(Tag, Array[Attr])
@@ -209,47 +561,146 @@ pub enum Tag {
   Head
   Body
   Title
-  Meta
+  Base
   Link
+  Meta
   Style
   Script
-  Div
-  Span
-  Section
-  Header
-  Main
+  Noscript
+  Address
+  Article
   Aside
   Footer
-  Nav
-  Article
+  Header
   H1
   H2
   H3
   H4
   H5
   H6
-  P
-  Small
-  Strong
-  Em
-  Ul
-  Ol
-  Li
-  A
-  Button
-  Form
-  Label
-  Input
-  Textarea
-  Select
-  Option
-  Img
-  Pre
-  Code
+  Hgroup
+  Main
+  Nav
+  Section
+  Search
+  Blockquote
+  Div
+  Dl
+  Dt
+  Dd
+  Figure
+  Figcaption
   Hr
+  Li
+  Menu
+  Ol
+  P
+  Pre
+  Ul
+  A
+  Abbr
+  B
+  Bdi
+  Bdo
   Br
+  Cite
+  Code
+  Data
+  Dfn
+  Em
+  I
+  Kbd
+  Mark
+  Q
+  Ruby
+  Rp
+  Rt
+  S
+  Samp
+  Small
+  Span
+  Strong
+  Sub
+  Sup
+  Time
+  U
+  Var
+  Wbr
+  Area
+  Audio
+  Img
+  Map
+  Picture
+  Source
+  Track
+  Video
+  Canvas
+  Embed
+  Iframe
+  Object
+  Param
+  Svg
+  Math
+  Del
+  Ins
+  Table
+  Caption
+  Colgroup
+  Col
+  Tbody
+  Thead
+  Tfoot
+  Tr
+  Th
+  Td
+  Button
+  Datalist
+  Fieldset
+  Form
+  Input
+  Label
+  Legend
+  Meter
+  Optgroup
+  Option
+  Output
+  Progress
+  Select
+  Textarea
+  Details
+  Dialog
+  Summary
+  Slot
+  Template
+  Acronym
+  Applet
+  Basefont
+  Bgsound
+  Big
+  Blink
+  Center
+  Dir
+  Font
+  Frame
+  Frameset
+  Isindex
+  Keygen
+  Listing
+  Marquee
+  Menuitem
+  Multicol
+  Nextid
+  Nobr
+  Noembed
+  Noframes
+  Plaintext
+  Spacer
+  Strike
+  Tt
+  Xmp
   Custom(String)
 }
+pub fn Tag::custom(String) -> Self
 pub fn Tag::is_void(Self) -> Bool
 pub fn Tag::to_string(Self) -> String
 pub impl Eq for Tag
