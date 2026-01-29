@@ -23,6 +23,18 @@ import "test" {
 }
 ```
 
+## tmpx_next (Experimental, breaking changes)
+
+tmpx_next is a next-generation DSL that breaks compatibility on purpose. It aims
+for a shorter API (no user-facing `[]`), void-safety by type, and immutable
+update operations. It lives in a separate package so you can adopt it gradually.
+
+```moon
+import "test" {
+  "f4ah6o/tmpx/tmpx_next" as @tmpx_next
+}
+```
+
 ## Basic Usage
 
 ### Creating Elements
@@ -199,5 +211,4 @@ let view = @tmpx_core.div([
 ## License
 
 Apache-2.0
-
 

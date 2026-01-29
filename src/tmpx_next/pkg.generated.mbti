@@ -1,0 +1,251 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "f4ah6o/tmpx/tmpx_next"
+
+// Values
+pub fn alt(String) -> Attr
+
+pub fn attr(String, String) -> Attr
+
+pub fn bool_attr(String) -> Attr
+
+pub fn br_attrs(Array[Attr]) -> Node
+
+pub fn class_(String) -> Attr
+
+pub fn class_list(Array[String]) -> Attr
+
+pub fn div_parts(Array[Part]) -> Node
+
+pub fn fragment(Array[Node]) -> Node
+
+pub fn href(String) -> Attr
+
+pub fn id_(String) -> Attr
+
+pub fn img_attrs(Array[Attr]) -> Node
+
+pub fn normalize_attrs(Array[Attr]) -> Array[Attr]
+
+pub fn p_parts(Array[Part]) -> Node
+
+pub fn part_attr(Attr) -> Part
+
+pub fn part_child(Node) -> Part
+
+pub fn part_text(String) -> Part
+
+pub fn raw(String) -> Node
+
+pub fn render(Node) -> String
+
+pub fn render_nodes(Array[Node]) -> String
+
+pub fn span_parts(Array[Part]) -> Node
+
+pub fn src(String) -> Attr
+
+pub fn text(String) -> Node
+
+pub fn unsafe_custom_element(String, Array[Part]) -> Node
+
+pub fn unsafe_custom_void(String, Array[Attr]) -> Node
+
+// Errors
+
+// Types and methods
+pub enum Attr {
+  KeyVal(String, String)
+  Bool(String)
+  ClassList(Array[String])
+}
+pub impl Eq for Attr
+pub impl Show for Attr
+
+pub struct ElementNode {
+  tag : Tag
+  attrs : Array[Attr]
+  children : Array[Node]
+}
+pub impl Eq for ElementNode
+pub impl Show for ElementNode
+
+pub enum Node {
+  Element(ElementNode)
+  Void(VoidNode)
+  Text(String)
+  Raw(String)
+  Fragment(Array[Node])
+}
+pub impl Eq for Node
+pub impl Show for Node
+
+pub enum Part {
+  PAttr(Attr)
+  PChild(Node)
+  PText(String)
+}
+pub impl Eq for Part
+pub impl Show for Part
+
+pub enum Tag {
+  Html
+  Head
+  Body
+  Title
+  Base
+  Link
+  Meta
+  Style
+  Script
+  Noscript
+  Address
+  Article
+  Aside
+  Footer
+  Header
+  H1
+  H2
+  H3
+  H4
+  H5
+  H6
+  Hgroup
+  Main
+  Nav
+  Section
+  Search
+  Blockquote
+  Div
+  Dl
+  Dt
+  Dd
+  Figure
+  Figcaption
+  Hr
+  Li
+  Menu
+  Ol
+  P
+  Pre
+  Ul
+  A
+  Abbr
+  B
+  Bdi
+  Bdo
+  Br
+  Cite
+  Code
+  Data
+  Dfn
+  Em
+  I
+  Kbd
+  Mark
+  Q
+  Ruby
+  Rp
+  Rt
+  S
+  Samp
+  Small
+  Span
+  Strong
+  Sub
+  Sup
+  Time
+  U
+  Var
+  Wbr
+  Area
+  Audio
+  Img
+  Map
+  Picture
+  Source
+  Track
+  Video
+  Canvas
+  Embed
+  Iframe
+  Object
+  Param
+  Svg
+  Math
+  Del
+  Ins
+  Table
+  Caption
+  Colgroup
+  Col
+  Tbody
+  Thead
+  Tfoot
+  Tr
+  Th
+  Td
+  Button
+  Datalist
+  Fieldset
+  Form
+  Input
+  Label
+  Legend
+  Meter
+  Optgroup
+  Option
+  Output
+  Progress
+  Select
+  Textarea
+  Details
+  Dialog
+  Summary
+  Slot
+  Template
+  Acronym
+  Applet
+  Basefont
+  Bgsound
+  Big
+  Blink
+  Center
+  Dir
+  Font
+  Frame
+  Frameset
+  Isindex
+  Keygen
+  Listing
+  Marquee
+  Menuitem
+  Multicol
+  Nextid
+  Nobr
+  Noembed
+  Noframes
+  Plaintext
+  Spacer
+  Strike
+  Tt
+  Xmp
+  Custom(String)
+}
+pub fn Tag::custom(String) -> Self
+pub fn Tag::is_void(Self) -> Bool
+pub fn Tag::to_string(Self) -> String
+pub impl Eq for Tag
+pub impl Show for Tag
+
+pub struct VoidNode {
+  tag : Tag
+  attrs : Array[Attr]
+}
+pub impl Eq for VoidNode
+pub impl Show for VoidNode
+
+// Type aliases
+pub type AttrSet = Array[Attr]
+
+// Traits
+
