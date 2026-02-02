@@ -18,6 +18,8 @@ pub fn attr(String, String) -> Attr
 
 pub fn audio_parts(Array[Part]) -> Node
 
+pub fn b_parts(Array[Part]) -> Node
+
 pub fn base_attrs(Array[Attr]) -> Node
 
 pub fn blockquote_parts(Array[Part]) -> Node
@@ -96,7 +98,11 @@ pub fn href(String) -> Attr
 
 pub fn html_parts(Array[Part]) -> Node
 
+pub fn i_parts(Array[Part]) -> Node
+
 pub fn id_(String) -> Attr
+
+pub fn iframe_parts(Array[Part]) -> Node
 
 pub fn img_attrs(Array[Attr]) -> Node
 
@@ -154,6 +160,8 @@ pub fn part_child(Node) -> Part
 
 pub fn part_text(String) -> Part
 
+pub fn picture_parts(Array[Part]) -> Node
+
 pub fn pre_parts(Array[Part]) -> Node
 
 pub fn progress_parts(Array[Part]) -> Node
@@ -166,7 +174,15 @@ pub fn render(Node) -> String
 
 pub fn render_nodes(Array[Node]) -> String
 
+pub fn rp_parts(Array[Part]) -> Node
+
+pub fn rt_parts(Array[Part]) -> Node
+
+pub fn ruby_parts(Array[Part]) -> Node
+
 pub fn s_parts(Array[Part]) -> Node
+
+pub fn samp_parts(Array[Part]) -> Node
 
 pub fn section_parts(Array[Part]) -> Node
 
@@ -219,6 +235,8 @@ pub fn ul_parts(Array[Part]) -> Node
 pub fn unsafe_custom_element(String, Array[Part]) -> Node
 
 pub fn unsafe_custom_void(String, Array[Attr]) -> Node
+
+pub fn var_parts(Array[Part]) -> Node
 
 pub fn video_parts(Array[Part]) -> Node
 

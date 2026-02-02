@@ -170,6 +170,16 @@ pub fn audio_parts(parts : Array[Part]) -> Node {
 }
 
 ///|
+pub fn picture_parts(parts : Array[Part]) -> Node {
+  element(Tag::Picture, parts)
+}
+
+///|
+pub fn iframe_parts(parts : Array[Part]) -> Node {
+  element(Tag::Iframe, parts)
+}
+
+///|
 pub fn table_parts(parts : Array[Part]) -> Node {
   element(Tag::Table, parts)
 }
@@ -292,6 +302,41 @@ pub fn del_parts(parts : Array[Part]) -> Node {
 ///|
 pub fn ins_parts(parts : Array[Part]) -> Node {
   element(Tag::Ins, parts)
+}
+
+///|
+pub fn i_parts(parts : Array[Part]) -> Node {
+  element(Tag::I, parts)
+}
+
+///|
+pub fn b_parts(parts : Array[Part]) -> Node {
+  element(Tag::B, parts)
+}
+
+///|
+pub fn samp_parts(parts : Array[Part]) -> Node {
+  element(Tag::Samp, parts)
+}
+
+///|
+pub fn var_parts(parts : Array[Part]) -> Node {
+  element(Tag::Var, parts)
+}
+
+///|
+pub fn ruby_parts(parts : Array[Part]) -> Node {
+  element(Tag::Ruby, parts)
+}
+
+///|
+pub fn rt_parts(parts : Array[Part]) -> Node {
+  element(Tag::Rt, parts)
+}
+
+///|
+pub fn rp_parts(parts : Array[Part]) -> Node {
+  element(Tag::Rp, parts)
 }
 
 ///|
