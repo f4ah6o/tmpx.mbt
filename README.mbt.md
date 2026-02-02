@@ -1,6 +1,6 @@
 # tmpx.mbt
 <!-- bdg:begin -->
-![moonbit](https://img.shields.io/badge/moonbit-f4ah6o/tmpx-informational)
+[![moonbit](https://img.shields.io/badge/moonbit-f4ah6o/tmpx-informational)](https://mooncakes.io/docs/f4ah6o/tmpx)
 <!-- bdg:end -->
 
 Typed, functional HTML template DSL for MoonBit.
@@ -131,3 +131,4 @@ See `src/tmpx/MIGRATION.md` for migration strategy and behavior differences.
 ## License
 
 Apache-2.0
+
