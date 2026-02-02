@@ -43,6 +43,13 @@ Tag is a single enum. Void-ness is expressed by node type, not by Tag type.
 Tag::is_void may exist for validation/rendering, but the API does not expose
 children for Void nodes.
 
+Tag enum currently includes a broad set of HTML (including legacy/obsolete)
+for compatibility with the original tmpx. tmpx_next’s supported surface is
+defined by the published builder batches in this document; additional tags are
+added incrementally. Legacy tags are not recommended and may be trimmed or
+isolated in a future cleanup. Use attr() for unknown attributes and
+unsafe_custom_* only for unknown/experimental tags.
+
 ### Types (concept)
 
 - `type Attr = ...`
