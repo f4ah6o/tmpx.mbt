@@ -23,12 +23,28 @@ import "test" {
 }
 ```
 
-## tmpx_next (Experimental, breaking changes)
+## tmpx_next (Beta, breaking changes)
 
 tmpx_next is a next-generation DSL that breaks compatibility on purpose. It aims
 for a shorter API (no user-facing `[]`), void-safety by type, and immutable
 update operations. It lives in a separate package so you can adopt it gradually.
 htmx helpers are not included in tmpx_next; use mhx helpers or `attr(...)`.
+
+### Status: Beta
+
+Beta means the API is usable and tested, but builder coverage may still expand;
+breaking changes are unlikely but possible before 1.0.
+
+**Contract (frozen in beta):**
+- Supported surface = published builder batches (see `src/tmpx_next/AGENTS.md`)
+- Determinism: AttrSet normalization + fixed attribute order + void rendering as `<tag ...>`
+- Safety boundary: Text escapes by default; Raw is explicit unsafe
+- mhx-only helpers; macro sugar is deferred
+
+**Adoption notes:**
+- Start with the v1 builders + common v2 tags; add more via future batches.
+- Deferred areas: `svg`, `math`, `canvas`, `script`, `style`.
+- For gaps, request the next builder batch rather than relying on legacy tags.
 
 ```moon
 import "test" {

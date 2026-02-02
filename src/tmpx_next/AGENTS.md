@@ -67,6 +67,15 @@ Legacy/obsolete list (frozen): `Acronym`, `Applet`, `Basefont`, `Bgsound`,
 Legacy tags may render correctly, but they are not guaranteed, not tested, and
 may be removed from the Tag enum in a future major revision.
 
+### Beta Contract Freeze
+
+tmpx_next is in **beta**. The following contracts are frozen:
+- Supported surface = builder batches v1–v9 in this document.
+- Deterministic render: AttrSet normalization + fixed attribute order.
+- Void rendering: `<tag ...>` (no self-closing slash).
+- Safety boundary: Text escapes by default; Raw is explicit unsafe.
+- mhx-only helpers; macro sugar is deferred.
+
 ### Types (concept)
 
 - `type Attr = ...`
