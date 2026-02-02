@@ -2,31 +2,137 @@
 package "f4ah6o/tmpx/tmpx_next"
 
 // Values
+pub fn a_parts(Array[Part]) -> Node
+
 pub fn alt(String) -> Attr
 
+pub fn area_attrs(Array[Attr]) -> Node
+
+pub fn article_parts(Array[Part]) -> Node
+
+pub fn aside_parts(Array[Part]) -> Node
+
 pub fn attr(String, String) -> Attr
+
+pub fn audio_parts(Array[Part]) -> Node
+
+pub fn base_attrs(Array[Attr]) -> Node
+
+pub fn blockquote_parts(Array[Part]) -> Node
+
+pub fn body_parts(Array[Part]) -> Node
 
 pub fn bool_attr(String) -> Attr
 
 pub fn br_attrs(Array[Attr]) -> Node
 
+pub fn button_parts(Array[Part]) -> Node
+
+pub fn caption_parts(Array[Part]) -> Node
+
+pub fn cite_parts(Array[Part]) -> Node
+
 pub fn class_(String) -> Attr
 
 pub fn class_list(Array[String]) -> Attr
 
+pub fn code_parts(Array[Part]) -> Node
+
+pub fn col_attrs(Array[Attr]) -> Node
+
+pub fn colgroup_parts(Array[Part]) -> Node
+
+pub fn dd_parts(Array[Part]) -> Node
+
+pub fn details_parts(Array[Part]) -> Node
+
 pub fn div_parts(Array[Part]) -> Node
+
+pub fn dl_parts(Array[Part]) -> Node
+
+pub fn dt_parts(Array[Part]) -> Node
+
+pub fn em_parts(Array[Part]) -> Node
+
+pub fn embed_attrs(Array[Attr]) -> Node
+
+pub fn fieldset_parts(Array[Part]) -> Node
+
+pub fn figcaption_parts(Array[Part]) -> Node
+
+pub fn figure_parts(Array[Part]) -> Node
+
+pub fn footer_parts(Array[Part]) -> Node
+
+pub fn form_parts(Array[Part]) -> Node
 
 pub fn fragment(Array[Node]) -> Node
 
+pub fn h1_parts(Array[Part]) -> Node
+
+pub fn h2_parts(Array[Part]) -> Node
+
+pub fn h3_parts(Array[Part]) -> Node
+
+pub fn h4_parts(Array[Part]) -> Node
+
+pub fn h5_parts(Array[Part]) -> Node
+
+pub fn h6_parts(Array[Part]) -> Node
+
+pub fn head_parts(Array[Part]) -> Node
+
+pub fn header_parts(Array[Part]) -> Node
+
+pub fn hr_attrs(Array[Attr]) -> Node
+
 pub fn href(String) -> Attr
+
+pub fn html_parts(Array[Part]) -> Node
 
 pub fn id_(String) -> Attr
 
 pub fn img_attrs(Array[Attr]) -> Node
 
+pub fn input_attrs(Array[Attr]) -> Node
+
+pub fn kbd_parts(Array[Part]) -> Node
+
+pub fn label_parts(Array[Part]) -> Node
+
+pub fn legend_parts(Array[Part]) -> Node
+
+pub fn li_parts(Array[Part]) -> Node
+
+pub fn link_attrs(Array[Attr]) -> Node
+
+pub fn main_parts(Array[Part]) -> Node
+
+pub fn mark_parts(Array[Part]) -> Node
+
+pub fn meta_attrs(Array[Attr]) -> Node
+
+pub fn mx_get(String) -> Attr
+
+pub fn mx_post(String) -> Attr
+
+pub fn mx_swap(MxSwap) -> Attr
+
+pub fn mx_target(String) -> Attr
+
+pub fn mx_trigger(String) -> Attr
+
+pub fn nav_parts(Array[Part]) -> Node
+
 pub fn normalize_attrs(Array[Attr]) -> Array[Attr]
 
+pub fn ol_parts(Array[Part]) -> Node
+
+pub fn option_parts(Array[Part]) -> Node
+
 pub fn p_parts(Array[Part]) -> Node
+
+pub fn param_attrs(Array[Attr]) -> Node
 
 pub fn part_attr(Attr) -> Part
 
@@ -34,21 +140,65 @@ pub fn part_child(Node) -> Part
 
 pub fn part_text(String) -> Part
 
+pub fn pre_parts(Array[Part]) -> Node
+
 pub fn raw(String) -> Node
 
 pub fn render(Node) -> String
 
 pub fn render_nodes(Array[Node]) -> String
 
+pub fn section_parts(Array[Part]) -> Node
+
+pub fn select_parts(Array[Part]) -> Node
+
+pub fn small_parts(Array[Part]) -> Node
+
+pub fn source_attrs(Array[Attr]) -> Node
+
 pub fn span_parts(Array[Part]) -> Node
 
 pub fn src(String) -> Attr
 
+pub fn strong_parts(Array[Part]) -> Node
+
+pub fn sub_parts(Array[Part]) -> Node
+
+pub fn summary_parts(Array[Part]) -> Node
+
+pub fn sup_parts(Array[Part]) -> Node
+
+pub fn table_parts(Array[Part]) -> Node
+
+pub fn tbody_parts(Array[Part]) -> Node
+
+pub fn td_parts(Array[Part]) -> Node
+
 pub fn text(String) -> Node
+
+pub fn textarea_parts(Array[Part]) -> Node
+
+pub fn tfoot_parts(Array[Part]) -> Node
+
+pub fn th_parts(Array[Part]) -> Node
+
+pub fn thead_parts(Array[Part]) -> Node
+
+pub fn title_parts(Array[Part]) -> Node
+
+pub fn tr_parts(Array[Part]) -> Node
+
+pub fn track_attrs(Array[Attr]) -> Node
+
+pub fn ul_parts(Array[Part]) -> Node
 
 pub fn unsafe_custom_element(String, Array[Part]) -> Node
 
 pub fn unsafe_custom_void(String, Array[Attr]) -> Node
+
+pub fn video_parts(Array[Part]) -> Node
+
+pub fn wbr_attrs(Array[Attr]) -> Node
 
 // Errors
 
@@ -68,6 +218,20 @@ pub struct ElementNode {
 }
 pub impl Eq for ElementNode
 pub impl Show for ElementNode
+
+pub(all) enum MxSwap {
+  InnerHTML
+  OuterHTML
+  BeforeBegin
+  AfterBegin
+  BeforeEnd
+  AfterEnd
+  Delete
+  None
+}
+pub fn MxSwap::to_string(Self) -> String
+pub impl Eq for MxSwap
+pub impl Show for MxSwap
 
 pub enum Node {
   Element(ElementNode)
