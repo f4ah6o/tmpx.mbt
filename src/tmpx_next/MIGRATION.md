@@ -319,3 +319,7 @@ Void: `base_attrs`, `area_attrs`, `col_attrs`, `embed_attrs`, `param_attrs`, `tr
 ### v4 batch (additive)
 Inline: `kbd_parts`, `mark_parts`, `sup_parts`, `sub_parts`
 Tables: `caption_parts`, `colgroup_parts`
+
+### v5 batch (additive)
+Forms: `datalist_parts`, `optgroup_parts`, `output_parts`, `progress_parts`, `meter_parts`
+Inline: `abbr_parts`, `time_parts`, `q_parts`, `s_parts`, `u_parts`, `del_parts`, `ins_parts`

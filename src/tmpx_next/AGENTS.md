@@ -126,6 +126,12 @@ Element builders:
 - `kbd_parts`, `mark_parts`, `sup_parts`, `sub_parts`
 - `caption_parts`, `colgroup_parts`
 
+### v5 builder batch (additive)
+
+Element builders:
+- `datalist_parts`, `optgroup_parts`, `output_parts`, `progress_parts`, `meter_parts`
+- `abbr_parts`, `time_parts`, `q_parts`, `s_parts`, `u_parts`, `del_parts`, `ins_parts`
+
 ### Example (macro-level syntax)
 
 ```
