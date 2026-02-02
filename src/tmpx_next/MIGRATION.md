@@ -331,3 +331,7 @@ Inline: `i_parts`, `b_parts`, `samp_parts`, `var_parts`, `ruby_parts`, `rt_parts
 ### v7 batch (additive)
 Semantic: `dialog_parts`, `address_parts`, `search_parts`, `map_parts`
 Inline: `bdi_parts`, `bdo_parts`, `data_parts`, `dfn_parts`
+
+### v8 batch (additive)
+Components: `template_parts`, `slot_parts`, `object_parts`
+Semantic: `menu_parts`, `hgroup_parts`, `noscript_parts`

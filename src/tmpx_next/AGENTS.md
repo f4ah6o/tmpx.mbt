@@ -152,6 +152,12 @@ Element builders:
 - `dialog_parts`, `address_parts`, `search_parts`, `map_parts`
 - `bdi_parts`, `bdo_parts`, `data_parts`, `dfn_parts`
 
+### v8 builder batch (additive)
+
+Element builders:
+- `template_parts`, `slot_parts`, `object_parts`
+- `menu_parts`, `hgroup_parts`, `noscript_parts`
+
 ### Example (macro-level syntax)
 
 ```
