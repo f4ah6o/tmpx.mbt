@@ -127,7 +127,7 @@ pub fn normalize_attrs(attrs : Array[Attr]) -> AttrSet {
   for name in others.keys() {
     names.push(name)
   }
-  names.sort()
+  names.sort_by(fn(a, b) { a.lexical_compare(b) })
   for name in names {
     normalized.push(others[name])
   }
