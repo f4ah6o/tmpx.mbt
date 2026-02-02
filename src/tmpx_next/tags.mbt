@@ -180,6 +180,26 @@ pub fn iframe_parts(parts : Array[Part]) -> Node {
 }
 
 ///|
+pub fn dialog_parts(parts : Array[Part]) -> Node {
+  element(Tag::Dialog, parts)
+}
+
+///|
+pub fn address_parts(parts : Array[Part]) -> Node {
+  element(Tag::Address, parts)
+}
+
+///|
+pub fn search_parts(parts : Array[Part]) -> Node {
+  element(Tag::Search, parts)
+}
+
+///|
+pub fn map_parts(parts : Array[Part]) -> Node {
+  element(Tag::Map, parts)
+}
+
+///|
 pub fn table_parts(parts : Array[Part]) -> Node {
   element(Tag::Table, parts)
 }
@@ -337,6 +357,26 @@ pub fn rt_parts(parts : Array[Part]) -> Node {
 ///|
 pub fn rp_parts(parts : Array[Part]) -> Node {
   element(Tag::Rp, parts)
+}
+
+///|
+pub fn bdi_parts(parts : Array[Part]) -> Node {
+  element(Tag::Bdi, parts)
+}
+
+///|
+pub fn bdo_parts(parts : Array[Part]) -> Node {
+  element(Tag::Bdo, parts)
+}
+
+///|
+pub fn data_parts(parts : Array[Part]) -> Node {
+  element(Tag::Data, parts)
+}
+
+///|
+pub fn dfn_parts(parts : Array[Part]) -> Node {
+  element(Tag::Dfn, parts)
 }
 
 ///|

@@ -6,6 +6,8 @@ pub fn a_parts(Array[Part]) -> Node
 
 pub fn abbr_parts(Array[Part]) -> Node
 
+pub fn address_parts(Array[Part]) -> Node
+
 pub fn alt(String) -> Attr
 
 pub fn area_attrs(Array[Attr]) -> Node
@@ -21,6 +23,10 @@ pub fn audio_parts(Array[Part]) -> Node
 pub fn b_parts(Array[Part]) -> Node
 
 pub fn base_attrs(Array[Attr]) -> Node
+
+pub fn bdi_parts(Array[Part]) -> Node
+
+pub fn bdo_parts(Array[Part]) -> Node
 
 pub fn blockquote_parts(Array[Part]) -> Node
 
@@ -46,6 +52,8 @@ pub fn col_attrs(Array[Attr]) -> Node
 
 pub fn colgroup_parts(Array[Part]) -> Node
 
+pub fn data_parts(Array[Part]) -> Node
+
 pub fn datalist_parts(Array[Part]) -> Node
 
 pub fn dd_parts(Array[Part]) -> Node
@@ -53,6 +61,10 @@ pub fn dd_parts(Array[Part]) -> Node
 pub fn del_parts(Array[Part]) -> Node
 
 pub fn details_parts(Array[Part]) -> Node
+
+pub fn dfn_parts(Array[Part]) -> Node
+
+pub fn dialog_parts(Array[Part]) -> Node
 
 pub fn div_parts(Array[Part]) -> Node
 
@@ -122,6 +134,8 @@ pub fn link_attrs(Array[Attr]) -> Node
 
 pub fn main_parts(Array[Part]) -> Node
 
+pub fn map_parts(Array[Part]) -> Node
+
 pub fn mark_parts(Array[Part]) -> Node
 
 pub fn meta_attrs(Array[Attr]) -> Node
@@ -183,6 +197,8 @@ pub fn ruby_parts(Array[Part]) -> Node
 pub fn s_parts(Array[Part]) -> Node
 
 pub fn samp_parts(Array[Part]) -> Node
+
+pub fn search_parts(Array[Part]) -> Node
 
 pub fn section_parts(Array[Part]) -> Node
 
