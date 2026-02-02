@@ -28,6 +28,7 @@ import "test" {
 tmpx_next is a next-generation DSL that breaks compatibility on purpose. It aims
 for a shorter API (no user-facing `[]`), void-safety by type, and immutable
 update operations. It lives in a separate package so you can adopt it gradually.
+htmx helpers are not included in tmpx_next; use mhx helpers or `attr(...)`.
 
 ```moon
 import "test" {
@@ -114,7 +115,7 @@ let form = @tmpx_core.form(
 ## Available HTML Tags
 
 ### Document & Metadata
-- `html_`, `head`, `body`, `title`, `base`, `link`, `meta`, `style_`, `script`, `noscript`
+- `html_`, `head`, `body`, `title`, `base`, `style_`, `script`, `noscript`
 
 ### Sectioning & Headings
 - `address`, `article`, `aside`, `footer`, `header_`, `h1`-`h6`, `hgroup`, `main_`, `nav`, `section`, `search`
@@ -211,5 +212,3 @@ let view = @tmpx_core.div([
 ## License
 
 Apache-2.0
-
-

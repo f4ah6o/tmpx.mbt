@@ -28,6 +28,15 @@ Out of core (separate packages):
 - Stateful builders (tmpx_next/builder).
 - HTML validators (tmpx_next/validate).
 
+## 1.1 mhx helpers (mhx-only policy)
+
+- tmpx_next provides **mhx only**; htmx helpers are intentionally omitted.
+- mhx helpers are **Attr-only** (no Node construction).
+- Official minimal surface: `mx_get`, `mx_post`, `mx_target`, `mx_trigger`,
+  `mx_swap` + `MxSwap`.
+- htmx users should call `attr("hx-...", "...")` directly as an escape hatch.
+- mhx helpers emit `mx-*` attribute names (not `data-mx-*`).
+
 ## 2. Core data model (Void separation, Tag unified)
 
 Tag is a single enum. Void-ness is expressed by node type, not by Tag type.
@@ -77,6 +86,45 @@ If MoonBit lacks true variadic arguments, tmpx_next core exposes array-based
 builders (e.g. `div_parts(parts : Array[Part])`, `img_attrs(attrs : Array[Attr])`)
 and the macro package is responsible for user-facing variadic syntax. The
 user-facing API MUST NOT require `[]` in normal usage.
+
+### v1 builder batch (fixed surface)
+
+Element builders:
+- `div_parts`, `span_parts`, `main_parts`, `section_parts`, `header_parts`, `footer_parts`
+- `p_parts`, `h1_parts`, `h2_parts`, `h3_parts`, `a_parts`
+- `form_parts`, `button_parts`, `label_parts`, `ul_parts`, `li_parts`
+
+Void builders:
+- `img_attrs`, `br_attrs`, `hr_attrs`, `input_attrs` (void element)
+
+### v2 builder batch (additive)
+
+Element builders:
+- `html_parts`, `head_parts`, `body_parts`, `title_parts`, `nav_parts`, `article_parts`, `aside_parts`
+- `h4_parts`, `h5_parts`, `h6_parts`, `em_parts`, `strong_parts`, `code_parts`, `pre_parts`
+- `figure_parts`, `figcaption_parts`, `video_parts`, `audio_parts`
+- `table_parts`, `thead_parts`, `tbody_parts`, `tfoot_parts`, `tr_parts`, `th_parts`, `td_parts`
+- `textarea_parts`, `select_parts`, `option_parts`
+
+Void builders:
+- `meta_attrs`, `link_attrs`, `source_attrs`
+
+### v3 builder batch (additive)
+
+Element builders:
+- `small_parts`, `cite_parts`, `blockquote_parts`
+- `dl_parts`, `dt_parts`, `dd_parts`, `ol_parts`
+- `details_parts`, `summary_parts`
+- `fieldset_parts`, `legend_parts`
+
+Void builders:
+- `base_attrs`, `area_attrs`, `col_attrs`, `embed_attrs`, `param_attrs`, `track_attrs`, `wbr_attrs`
+
+### v4 builder batch (additive)
+
+Element builders:
+- `kbd_parts`, `mark_parts`, `sup_parts`, `sub_parts`
+- `caption_parts`, `colgroup_parts`
 
 ### Example (macro-level syntax)
 
@@ -134,6 +182,9 @@ This order is part of the render contract.
 - `unsafe_custom_void(name : String, attrs : Array[Attr]) -> Node`
 
 These are intentionally labeled unsafe to keep the default API safe.
+
+Prefer tag-specific builders; use attr(name, value) for unknown attributes;
+use unsafe_custom_* only for unknown/experimental tags.
 
 ## 6. Immutable update API
 
