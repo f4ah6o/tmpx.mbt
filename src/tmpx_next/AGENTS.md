@@ -146,6 +146,12 @@ Element builders:
 - `i_parts`, `b_parts`, `samp_parts`, `var_parts`
 - `ruby_parts`, `rt_parts`, `rp_parts`
 
+### v7 builder batch (additive)
+
+Element builders:
+- `dialog_parts`, `address_parts`, `search_parts`, `map_parts`
+- `bdi_parts`, `bdo_parts`, `data_parts`, `dfn_parts`
+
 ### Example (macro-level syntax)
 
 ```

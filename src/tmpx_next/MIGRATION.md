@@ -327,3 +327,7 @@ Inline: `abbr_parts`, `time_parts`, `q_parts`, `s_parts`, `u_parts`, `del_parts`
 ### v6 batch (additive)
 Media: `picture_parts`, `iframe_parts`
 Inline: `i_parts`, `b_parts`, `samp_parts`, `var_parts`, `ruby_parts`, `rt_parts`, `rp_parts`
+
+### v7 batch (additive)
+Semantic: `dialog_parts`, `address_parts`, `search_parts`, `map_parts`
+Inline: `bdi_parts`, `bdo_parts`, `data_parts`, `dfn_parts`
