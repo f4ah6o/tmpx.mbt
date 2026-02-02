@@ -6,9 +6,6 @@ test "pre/code escapes text; raw bypasses" {
   ])
   inspect(
     render(node),
-    content=(
-      "<pre><code>&lt;x&gt;&amp;&quot;</code>" +
-      "<b>raw</b></pre>"
-    ),
+    content="<pre><code>&lt;x&gt;&amp;&quot;</code>" + "<b>raw</b></pre>",
   )
 }

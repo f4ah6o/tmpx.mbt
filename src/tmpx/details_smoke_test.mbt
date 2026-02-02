@@ -2,7 +2,7 @@
 test "details/summary renders structure and escapes" {
   let node = details_parts([
     part_child(summary_parts([part_text("More <info>")])),
-    part_child(p_parts([part_text("Body & more")]))
+    part_child(p_parts([part_text("Body & more")])),
   ])
   inspect(
     render(node),

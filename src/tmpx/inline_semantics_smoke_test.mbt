@@ -8,9 +8,7 @@ test "inline semantics render and respect safety boundary" {
   ])
   inspect(
     render(node),
-    content=(
-      "<p><kbd>Ctrl+&lt;C&gt;</kbd><mark><em>hot</em></mark>" +
-      "<sup>x&lt;2&gt;</sup><sub>y&amp;1</sub></p>"
-    ),
+    content="<p><kbd>Ctrl+&lt;C&gt;</kbd><mark><em>hot</em></mark>" +
+      "<sup>x&lt;2&gt;</sup><sub>y&amp;1</sub></p>",
   )
 }
