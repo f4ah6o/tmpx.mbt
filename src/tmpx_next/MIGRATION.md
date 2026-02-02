@@ -323,3 +323,7 @@ Tables: `caption_parts`, `colgroup_parts`
 ### v5 batch (additive)
 Forms: `datalist_parts`, `optgroup_parts`, `output_parts`, `progress_parts`, `meter_parts`
 Inline: `abbr_parts`, `time_parts`, `q_parts`, `s_parts`, `u_parts`, `del_parts`, `ins_parts`
+
+### v6 batch (additive)
+Media: `picture_parts`, `iframe_parts`
+Inline: `i_parts`, `b_parts`, `samp_parts`, `var_parts`, `ruby_parts`, `rt_parts`, `rp_parts`

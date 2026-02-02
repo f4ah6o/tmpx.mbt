@@ -139,6 +139,13 @@ Element builders:
 - `datalist_parts`, `optgroup_parts`, `output_parts`, `progress_parts`, `meter_parts`
 - `abbr_parts`, `time_parts`, `q_parts`, `s_parts`, `u_parts`, `del_parts`, `ins_parts`
 
+### v6 builder batch (additive)
+
+Element builders:
+- `picture_parts`, `iframe_parts`
+- `i_parts`, `b_parts`, `samp_parts`, `var_parts`
+- `ruby_parts`, `rt_parts`, `rp_parts`
+
 ### Example (macro-level syntax)
 
 ```
