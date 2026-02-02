@@ -4,6 +4,8 @@ package "f4ah6o/tmpx/tmpx_next"
 // Values
 pub fn a_parts(Array[Part]) -> Node
 
+pub fn abbr_parts(Array[Part]) -> Node
+
 pub fn alt(String) -> Attr
 
 pub fn area_attrs(Array[Attr]) -> Node
@@ -42,7 +44,11 @@ pub fn col_attrs(Array[Attr]) -> Node
 
 pub fn colgroup_parts(Array[Part]) -> Node
 
+pub fn datalist_parts(Array[Part]) -> Node
+
 pub fn dd_parts(Array[Part]) -> Node
+
+pub fn del_parts(Array[Part]) -> Node
 
 pub fn details_parts(Array[Part]) -> Node
 
@@ -96,6 +102,8 @@ pub fn img_attrs(Array[Attr]) -> Node
 
 pub fn input_attrs(Array[Attr]) -> Node
 
+pub fn ins_parts(Array[Part]) -> Node
+
 pub fn kbd_parts(Array[Part]) -> Node
 
 pub fn label_parts(Array[Part]) -> Node
@@ -111,6 +119,8 @@ pub fn main_parts(Array[Part]) -> Node
 pub fn mark_parts(Array[Part]) -> Node
 
 pub fn meta_attrs(Array[Attr]) -> Node
+
+pub fn meter_parts(Array[Part]) -> Node
 
 pub fn mx_get(String) -> Attr
 
@@ -128,7 +138,11 @@ pub fn normalize_attrs(Array[Attr]) -> Array[Attr]
 
 pub fn ol_parts(Array[Part]) -> Node
 
+pub fn optgroup_parts(Array[Part]) -> Node
+
 pub fn option_parts(Array[Part]) -> Node
+
+pub fn output_parts(Array[Part]) -> Node
 
 pub fn p_parts(Array[Part]) -> Node
 
@@ -142,11 +156,17 @@ pub fn part_text(String) -> Part
 
 pub fn pre_parts(Array[Part]) -> Node
 
+pub fn progress_parts(Array[Part]) -> Node
+
+pub fn q_parts(Array[Part]) -> Node
+
 pub fn raw(String) -> Node
 
 pub fn render(Node) -> String
 
 pub fn render_nodes(Array[Node]) -> String
+
+pub fn s_parts(Array[Part]) -> Node
 
 pub fn section_parts(Array[Part]) -> Node
 
@@ -184,11 +204,15 @@ pub fn th_parts(Array[Part]) -> Node
 
 pub fn thead_parts(Array[Part]) -> Node
 
+pub fn time_parts(Array[Part]) -> Node
+
 pub fn title_parts(Array[Part]) -> Node
 
 pub fn tr_parts(Array[Part]) -> Node
 
 pub fn track_attrs(Array[Attr]) -> Node
+
+pub fn u_parts(Array[Part]) -> Node
 
 pub fn ul_parts(Array[Part]) -> Node
 

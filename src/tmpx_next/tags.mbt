@@ -230,8 +230,68 @@ pub fn option_parts(parts : Array[Part]) -> Node {
 }
 
 ///|
+pub fn datalist_parts(parts : Array[Part]) -> Node {
+  element(Tag::Datalist, parts)
+}
+
+///|
+pub fn optgroup_parts(parts : Array[Part]) -> Node {
+  element(Tag::Optgroup, parts)
+}
+
+///|
+pub fn output_parts(parts : Array[Part]) -> Node {
+  element(Tag::Output, parts)
+}
+
+///|
+pub fn progress_parts(parts : Array[Part]) -> Node {
+  element(Tag::Progress, parts)
+}
+
+///|
+pub fn meter_parts(parts : Array[Part]) -> Node {
+  element(Tag::Meter, parts)
+}
+
+///|
 pub fn small_parts(parts : Array[Part]) -> Node {
   element(Tag::Small, parts)
+}
+
+///|
+pub fn abbr_parts(parts : Array[Part]) -> Node {
+  element(Tag::Abbr, parts)
+}
+
+///|
+pub fn time_parts(parts : Array[Part]) -> Node {
+  element(Tag::Time, parts)
+}
+
+///|
+pub fn q_parts(parts : Array[Part]) -> Node {
+  element(Tag::Q, parts)
+}
+
+///|
+pub fn s_parts(parts : Array[Part]) -> Node {
+  element(Tag::S, parts)
+}
+
+///|
+pub fn u_parts(parts : Array[Part]) -> Node {
+  element(Tag::U, parts)
+}
+
+///|
+pub fn del_parts(parts : Array[Part]) -> Node {
+  element(Tag::Del, parts)
+}
+
+///|
+pub fn ins_parts(parts : Array[Part]) -> Node {
+  element(Tag::Ins, parts)
 }
 
 ///|
