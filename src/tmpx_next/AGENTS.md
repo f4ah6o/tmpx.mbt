@@ -50,6 +50,23 @@ added incrementally. Legacy tags are not recommended and may be trimmed or
 isolated in a future cleanup. Use attr() for unknown attributes and
 unsafe_custom_* only for unknown/experimental tags.
 
+### Tag Coverage Policy (Tiers)
+
+- **Core supported**: tags that have published builders in v1–v8 below. This is
+  the only supported surface.
+- **Planned (deferred)**: `svg`, `math`, `canvas`, `script`, `style` (explicitly
+  out of scope for now).
+- **Legacy/obsolete**: kept in `Tag` for compatibility, but **no builders will
+  be added**. Use only via `unsafe_custom_*` if absolutely necessary.
+
+Legacy/obsolete list (frozen): `Acronym`, `Applet`, `Basefont`, `Bgsound`,
+`Big`, `Blink`, `Center`, `Dir`, `Font`, `Frame`, `Frameset`, `Isindex`,
+`Keygen`, `Listing`, `Marquee`, `Menuitem`, `Multicol`, `Nextid`, `Nobr`,
+`Noembed`, `Noframes`, `Plaintext`, `Spacer`, `Strike`, `Tt`, `Xmp`.
+
+Legacy tags may render correctly, but they are not guaranteed, not tested, and
+may be removed from the Tag enum in a future major revision.
+
 ### Types (concept)
 
 - `type Attr = ...`

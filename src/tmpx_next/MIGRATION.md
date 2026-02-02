@@ -295,6 +295,11 @@ We only flip defaults (e.g., docs recommending tmpx_next) when:
 
 For the guaranteed builder set, see `src/tmpx_next/AGENTS.md`.
 
+Tag support policy: builders define the supported surface. The Tag enum may
+include legacy/obsolete tags for compatibility, but they are not tested or
+guaranteed and may be removed in a future major revision. Use `unsafe_custom_*`
+only when absolutely necessary.
+
 ### v1 batch (fixed surface)
 Layout: `div_parts`, `span_parts`, `main_parts`, `section_parts`, `header_parts`, `footer_parts`
 Text: `p_parts`, `h1_parts`, `h2_parts`, `h3_parts`, `a_parts`
