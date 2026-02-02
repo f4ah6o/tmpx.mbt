@@ -10,5 +10,6 @@
   "license": "Apache-2.0",
   "keywords": [],
   "description": "Typed functional HTML template DSL for MoonBit",
-  "source": "src"
+  "source": "src",
+  "warn-list": "-unused_constructor"
 }
