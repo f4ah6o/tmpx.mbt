@@ -45,6 +45,7 @@ breaking changes are unlikely but possible before 1.0.
 - Start with the v1 builders + common v2 tags; add more via future batches.
 - Deferred areas: `svg`, `math`, `canvas`, `script`, `style`.
 - For gaps, request the next builder batch rather than relying on legacy tags.
+- Have feedback? See `src/tmpx_next/FEEDBACK.md`.
 
 ```moon
 import "test" {
