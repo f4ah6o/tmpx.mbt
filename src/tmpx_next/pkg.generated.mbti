@@ -104,6 +104,8 @@ pub fn head_parts(Array[Part]) -> Node
 
 pub fn header_parts(Array[Part]) -> Node
 
+pub fn hgroup_parts(Array[Part]) -> Node
+
 pub fn hr_attrs(Array[Attr]) -> Node
 
 pub fn href(String) -> Attr
@@ -138,6 +140,8 @@ pub fn map_parts(Array[Part]) -> Node
 
 pub fn mark_parts(Array[Part]) -> Node
 
+pub fn menu_parts(Array[Part]) -> Node
+
 pub fn meta_attrs(Array[Attr]) -> Node
 
 pub fn meter_parts(Array[Part]) -> Node
@@ -155,6 +159,10 @@ pub fn mx_trigger(String) -> Attr
 pub fn nav_parts(Array[Part]) -> Node
 
 pub fn normalize_attrs(Array[Attr]) -> Array[Attr]
+
+pub fn noscript_parts(Array[Part]) -> Node
+
+pub fn object_parts(Array[Part]) -> Node
 
 pub fn ol_parts(Array[Part]) -> Node
 
@@ -204,6 +212,8 @@ pub fn section_parts(Array[Part]) -> Node
 
 pub fn select_parts(Array[Part]) -> Node
 
+pub fn slot_parts(Array[Part]) -> Node
+
 pub fn small_parts(Array[Part]) -> Node
 
 pub fn source_attrs(Array[Attr]) -> Node
@@ -225,6 +235,8 @@ pub fn table_parts(Array[Part]) -> Node
 pub fn tbody_parts(Array[Part]) -> Node
 
 pub fn td_parts(Array[Part]) -> Node
+
+pub fn template_parts(Array[Part]) -> Node
 
 pub fn text(String) -> Node
 

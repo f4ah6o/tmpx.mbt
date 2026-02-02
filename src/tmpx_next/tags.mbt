@@ -200,6 +200,11 @@ pub fn map_parts(parts : Array[Part]) -> Node {
 }
 
 ///|
+pub fn object_parts(parts : Array[Part]) -> Node {
+  element(Tag::Object, parts)
+}
+
+///|
 pub fn table_parts(parts : Array[Part]) -> Node {
   element(Tag::Table, parts)
 }
@@ -377,6 +382,31 @@ pub fn data_parts(parts : Array[Part]) -> Node {
 ///|
 pub fn dfn_parts(parts : Array[Part]) -> Node {
   element(Tag::Dfn, parts)
+}
+
+///|
+pub fn noscript_parts(parts : Array[Part]) -> Node {
+  element(Tag::Noscript, parts)
+}
+
+///|
+pub fn hgroup_parts(parts : Array[Part]) -> Node {
+  element(Tag::Hgroup, parts)
+}
+
+///|
+pub fn menu_parts(parts : Array[Part]) -> Node {
+  element(Tag::Menu, parts)
+}
+
+///|
+pub fn template_parts(parts : Array[Part]) -> Node {
+  element(Tag::Template, parts)
+}
+
+///|
+pub fn slot_parts(parts : Array[Part]) -> Node {
+  element(Tag::Slot, parts)
 }
 
 ///|
