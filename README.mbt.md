@@ -7,11 +7,11 @@ Typed, functional HTML template DSL for MoonBit.
 
 ## Features
 
-- **Type-safe tag/attribute construction** - Compile-time safety for HTML structure
-- **Functional composition** - Build views using immutable, composable functions
-- **htmx-friendly helpers** - First-class support for htmx attributes
-- **Automatic HTML escaping** - Secure by default with XSS protection
-- **Void element handling** - Correct rendering of self-closing tags
+- **Type-safe tag/attribute construction** - avoid stringly-typed HTML where possible
+- **Functional composition** - build views from pure, immutable functions
+- **Deterministic rendering** - normalized attributes with fixed order
+- **Void safety by API shape** - void elements cannot accept children
+- **mhx-only helpers** - explicit attribute helpers for mx-* integration
 
 ## Installation
 
@@ -19,212 +19,114 @@ Add to your `moon.pkg`:
 
 ```moon
 import "test" {
-  "f4ah6o/tmpx/tmpx" as @tmpx_core
+  "f4ah6o/tmpx/tmpx" as @tmpx
 }
 ```
 
-## tmpx_next (Beta, breaking changes)
+## Status: Beta (breaking changes from legacy tmpx)
 
-tmpx_next is a next-generation DSL that breaks compatibility on purpose. It aims
-for a shorter API (no user-facing `[]`), void-safety by type, and immutable
-update operations. It lives in a separate package so you can adopt it gradually.
-htmx helpers are not included in tmpx_next; use mhx helpers or `attr(...)`.
-
-### Status: Beta
-
-Beta means the API is usable and tested, but builder coverage may still expand;
-breaking changes are unlikely but possible before 1.0.
+Beta means the API is usable and tested, but builder coverage may still expand; breaking
+changes are unlikely but possible before 1.0.
 
 **Contract (frozen in beta):**
-- Supported surface = published builder batches (see `src/tmpx_next/AGENTS.md`)
+- Supported surface = published builder batches (see `src/tmpx/AGENTS.md`)
 - Determinism: AttrSet normalization + fixed attribute order + void rendering as `<tag ...>`
 - Safety boundary: Text escapes by default; Raw is explicit unsafe
 - mhx-only helpers; macro sugar is deferred
 
 **Adoption notes:**
-- Start with the v1 builders + common v2 tags; add more via future batches.
+- Start with v1 builders + common v2 tags; request new builder batches as needed.
 - Deferred areas: `svg`, `math`, `canvas`, `script`, `style`.
-- For gaps, request the next builder batch rather than relying on legacy tags.
-- Have feedback? See `src/tmpx_next/FEEDBACK.md`.
-
-```moon
-import "test" {
-  "f4ah6o/tmpx/tmpx_next" as @tmpx_next
-}
-```
+- Have feedback? See `src/tmpx/FEEDBACK.md`.
 
 ## Basic Usage
 
 ### Creating Elements
 
-HTML elements are created using functional-style builders:
-
 ```mbt
-// A div with class and content
-let card = @tmpx_core.div(
-  [@tmpx_core.class_("card"), @tmpx_core.id_("my-card")],
-  [@tmpx_core.h1([], [@tmpx_core.text("Hello")])]
-)
+// A div with class/id and content
+let card = div_parts([
+  part_attr(class_("card")),
+  part_attr(id_("main")),
+  part_child(h1_parts([part_text("Title")])),
+  part_child(p_parts([part_text("Body")]))
+])
 
 // Render to HTML string
-let html = @tmpx_core.render(card)
-// <div class="card" id="my-card"><h1>Hello</h1></div>
+let html = render(card)
+// <div class="card" id="main"><h1>Title</h1><p>Body</p></div>
 ```
 
-### Text and Content
+### Form Example
 
 ```mbt
-// Escaped text (safe for user input)
-@tmpx_core.text("Hello <World>")
-// -> Hello &lt;World&gt;
-
-// Raw HTML (use with caution)
-@tmpx_core.raw_html("<strong>Unescaped</strong>")
-// -> <strong>Unescaped</strong>
-
-// Fragment (group multiple nodes)
-@tmpx_core.fragment([
-  @tmpx_core.p([], [@tmpx_core.text("First")]),
-  @tmpx_core.p([], [@tmpx_core.text("Second")]),
+let form = form_parts([
+  part_attr(attr("action", "/submit")),
+  part_attr(attr("method", "post")),
+  part_child(label_parts([
+    part_attr(attr("for", "name")),
+    part_text("Name:")
+  ])),
+  part_child(input_attrs([
+    attr("type", "text"),
+    attr("name", "name"),
+    bool_attr("required")
+  ])),
+  part_child(button_parts([part_text("Send")]))
 ])
+let html = render(form)
 ```
 
-### Common Attributes
+### Text / Raw / Fragment
 
 ```mbt
-@tmpx_core.class_("container")        // class="container"
-@tmpx_core.class_list(["a", "b"])     // class="a b"
-@tmpx_core.id_("main")                // id="main"
-@tmpx_core.href("/page")              // href="/page"
-@tmpx_core.src("/image.png")          // src="/image.png"
-@tmpx_core.type_("text")              // type="text"
-@tmpx_core.name_("field")             // name="field"
-@tmpx_core.value_("val")              // value="val"
-@tmpx_core.placeholder("Enter...")    // placeholder="Enter..."
-@tmpx_core.method_("post")            // method="post"
-@tmpx_core.action("/submit")          // action="/submit"
-@tmpx_core.for_("input-id")           // for="input-id"
-@tmpx_core.data_attr("id", "123")     // data-id="123"
-@tmpx_core.aria("label", "Close")     // aria-label="Close"
-@tmpx_core.lang_attr("en")            // lang="en"
-```
-
-### Boolean Attributes
-
-```mbt
-@tmpx_core.disabled()    // disabled
-@tmpx_core.selected()    // selected
-```
-
-### Form Elements
-
-```mbt
-let form = @tmpx_core.form(
-  [@tmpx_core.action("/submit"), @tmpx_core.method_("post")],
-  [
-    @tmpx_core.label([@tmpx_core.for_("name")], [@tmpx_core.text("Name:")]),
-    @tmpx_core.input_([@tmpx_core.type_("text"), @tmpx_core.name_("name")]),
-    @tmpx_core.button([], [@tmpx_core.text("Submit")]),
-  ]
-)
-```
-
-## Available HTML Tags
-
-### Document & Metadata
-- `html_`, `head`, `body`, `title`, `base`, `style_`, `script`, `noscript`
-
-### Sectioning & Headings
-- `address`, `article`, `aside`, `footer`, `header_`, `h1`-`h6`, `hgroup`, `main_`, `nav`, `section`, `search`
-
-### Text Content
-- `blockquote`, `div`, `dl`, `dt`, `dd`, `figure`, `figcaption`, `hr`, `li`, `menu`, `ol`, `p`, `pre`, `ul`
-
-### Inline Text Semantics
-- `a`, `abbr`, `b`, `bdi`, `bdo`, `br`, `cite`, `code`, `data`, `dfn`, `em`, `i`, `kbd`, `mark`, `q`, `ruby`, `rp`, `rt`, `s`, `samp`, `small`, `span`, `strong`, `sub`, `sup`, `time`, `u`, `var_`, `wbr`
-
-### Media & Embedded
-- `img`, `picture`, `source`, `track`, `audio`, `video`, `map`, `area`, `canvas`, `iframe`, `embed`, `object_`, `param`, `svg`, `math`
-
-### Edits
-- `del`, `ins`
-
-### Tables
-- `table`, `caption`, `colgroup`, `col`, `thead`, `tbody`, `tfoot`, `tr`, `th`, `td`
-
-### Forms
-- `form`, `input_`, `textarea`, `select`, `option`, `optgroup`, `datalist`, `fieldset`, `legend`, `label`, `button`, `output`, `progress`, `meter`
-
-### Interactive & Web Components
-- `details`, `summary`, `dialog`, `slot`, `template`
-
-### Legacy (obsolete/deprecated)
-- `acronym`, `applet`, `basefont`, `bgsound`, `big`, `blink`, `center`, `dir`, `font`, `frame`, `frameset`, `isindex`, `keygen`, `listing`, `marquee`, `menuitem`, `multicol`, `nextid`, `nobr`, `noembed`, `noframes`, `plaintext`, `spacer`, `strike`, `tt`, `xmp`
-
-## htmx Integration
-
-### HTTP Methods
-
-```mbt
-@tmpx_core.hx_get("/api/data")
-@tmpx_core.hx_post("/api/create")
-@tmpx_core.hx_put("/api/update")
-@tmpx_core.hx_delete("/api/delete")
-```
-
-### htmx Configuration
-
-```mbt
-@tmpx_core.hx_target("#output")           // Target element selector
-@tmpx_core.hx_trigger("click")            // Trigger event
-@tmpx_core.hx_swap(@tmpx_core.InnerHTML)  // Swap strategy
-@tmpx_core.hx_include("#form")            // Include additional values
-@tmpx_core.hx_push_url(true)              // Push URL to browser history
-```
-
-### Swap Strategies
-
-```mbt
-@tmpx_core.InnerHTML    // Replace inner HTML (default)
-@tmpx_core.OuterHTML    // Replace element entirely
-@tmpx_core.BeforeBegin  // Insert before element
-@tmpx_core.AfterBegin   // Insert as first child
-@tmpx_core.BeforeEnd    // Insert as last child
-@tmpx_core.AfterEnd     // Insert after element
-@tmpx_core.Delete       // Delete element
-@tmpx_core.None         // No swap
-@tmpx_core.Morph        // Morph content (htmx extension)
-```
-
-### Complete htmx Example
-
-```mbt
-let view = @tmpx_core.div([
-  @tmpx_core.class_("card"),
-  @tmpx_core.hx_get("/partials/ticket/1"),
-  @tmpx_core.hx_target("#pane-center"),
-  @tmpx_core.hx_swap(@tmpx_core.InnerHTML),
-], [
-  @tmpx_core.h2([], [@tmpx_core.text("Ticket #1")]),
-  @tmpx_core.p([], [@tmpx_core.text("Loading...")]),
+let node = fragment([
+  text("Hello "),
+  raw("<b>World</b>")
 ])
-
-// Renders:
-// <div class="card" hx-get="/partials/ticket/1" hx-target="#pane-center" hx-swap="innerHTML">
-//   <h2>Ticket #1</h2>
-//   <p>Loading...</p>
-// </div>
+render(node)
+// Hello <b>World</b>
 ```
+
+## Attribute Helpers
+
+```mbt
+class_("container")
+class_list(["a", "b"])
+id_("main")
+href("/page")
+src("/image.png")
+alt("Logo")
+attr("data-id", "123")
+bool_attr("required")
+```
+
+For any other attribute, use `attr(name, value)`.
+
+## mhx Integration (mx-*)
+
+```mbt
+mx_get("/api/data")
+mx_post("/api/create")
+mx_target("#pane")
+mx_trigger("click")
+mx_swap(InnerHTML)
+```
+
+## Supported Tags
+
+Supported tags are defined by the published builder batches (v1–v8) in `src/tmpx/AGENTS.md`.
+Use `unsafe_custom_*` only for experimental/custom elements.
 
 ## Rendering
 
 ```mbt
-// Render a single node
-@tmpx_core.render(node) -> String
-
-// Render multiple nodes
-@tmpx_core.render_nodes(nodes) -> String
+render(node) -> String
 ```
+
+## Migration notes
+
+See `src/tmpx/MIGRATION.md` for migration strategy and behavior differences.
 
 ## License
 
