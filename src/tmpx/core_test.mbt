@@ -1,23 +1,23 @@
 ///|
 test "normalize_attrs merges class and orders attrs" {
-  let attrs = [
-    attr("data-z", "1"),
-    class_("a"),
-    attr("id", "first"),
-    class_list(["b", "a", "", "c"]),
-    attr("data-a", "old"),
-    attr("data-a", "new"),
-    id_("last"),
-  ]
-  let normalized = normalize_attrs(attrs)
-  guard normalized
+  let node = div_parts([
+    part_attr(attr("data-z", "1")),
+    part_attr(class_("a")),
+    part_attr(attr("id", "first")),
+    part_attr(class_list(["b", "a", "", "c"])),
+    part_attr(attr("data-a", "old")),
+    part_attr(attr("data-a", "new")),
+    part_attr(id_("last")),
+  ])
+  guard node is Node::Element(elem) else { fail("expected element") }
+  guard elem.attrs
     is [
       Attr::ClassList(classes),
       Attr::KeyVal("id", "last"),
       Attr::KeyVal("data-a", "new"),
       Attr::KeyVal("data-z", "1"),
     ] else {
-    fail("unexpected normalized attrs: \{normalized}")
+    fail("unexpected normalized attrs: \{elem.attrs}")
   }
   guard classes == ["a", "b", "c"] else {
     fail("unexpected class list: \{classes}")

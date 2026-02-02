@@ -1,28 +1,45 @@
 ///|
+pub struct ElementNode {
+  tag : Tag
+  attrs : AttrSet
+  children : Array[Node]
+} derive(Show, Eq)
+
+///|
+pub struct VoidNode {
+  tag : Tag
+  attrs : AttrSet
+} derive(Show, Eq)
+
+///|
 pub enum Node {
-  Element(Tag, Array[Attr], Array[Node])
-  VoidElement(Tag, Array[Attr])
+  Element(ElementNode)
+  Void(VoidNode)
   Text(String)
   Raw(String)
   Fragment(Array[Node])
 } derive(Show, Eq)
 
 ///|
-fn Tag::element(
-  self : Tag,
-  attrs : Array[Attr],
-  children : Array[Node],
-) -> Node {
-  if self.is_void() {
-    Node::VoidElement(self, attrs)
-  } else {
-    Node::Element(self, attrs, children)
-  }
+pub enum Part {
+  PAttr(Attr)
+  PChild(Node)
+  PText(String)
+} derive(Show, Eq)
+
+///|
+pub fn part_attr(attr : Attr) -> Part {
+  Part::PAttr(attr)
 }
 
 ///|
-fn Tag::void_element(self : Tag, attrs : Array[Attr]) -> Node {
-  Node::VoidElement(self, attrs)
+pub fn part_child(node : Node) -> Part {
+  Part::PChild(node)
+}
+
+///|
+pub fn part_text(value : String) -> Part {
+  Part::PText(value)
 }
 
 ///|
@@ -31,21 +48,11 @@ pub fn text(content : String) -> Node {
 }
 
 ///|
-pub fn raw_html(content : String) -> Node {
+pub fn raw(content : String) -> Node {
   Node::Raw(content)
 }
 
 ///|
 pub fn fragment(children : Array[Node]) -> Node {
   Node::Fragment(children)
-}
-
-///|
-pub fn element(tag : Tag, attrs : Array[Attr], children : Array[Node]) -> Node {
-  tag.element(attrs, children)
-}
-
-///|
-pub fn void_element(tag : Tag, attrs : Array[Attr]) -> Node {
-  tag.void_element(attrs)
 }

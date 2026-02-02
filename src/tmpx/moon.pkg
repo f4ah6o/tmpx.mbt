@@ -1,3 +1,2 @@
 import {
-  "moonbitlang/quickcheck" as @qc,
 }

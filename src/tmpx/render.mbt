@@ -48,30 +48,30 @@ fn render_attrs(sb : StringBuilder, attrs : ArrayView[Attr]) -> Unit {
 }
 
 ///|
-fn Node::render_into(self : Node, sb : StringBuilder) -> Unit {
-  match self {
+fn render_node_into(node : Node, sb : StringBuilder) -> Unit {
+  match node {
     Node::Text(content) => sb.write_string(escape_html(content))
     Node::Raw(content) => sb.write_string(content)
     Node::Fragment(children) =>
       for child in children {
-        child.render_into(sb)
+        render_node_into(child, sb)
       }
-    Node::Element(tag, attrs, children) => {
+    Node::Element(element) => {
       sb.write_char('<')
-      sb.write_string(tag.to_string())
-      render_attrs(sb, attrs)
+      sb.write_string(element.tag.to_string())
+      render_attrs(sb, element.attrs)
       sb.write_char('>')
-      for child in children {
-        child.render_into(sb)
+      for child in element.children {
+        render_node_into(child, sb)
       }
       sb.write_string("</")
-      sb.write_string(tag.to_string())
+      sb.write_string(element.tag.to_string())
       sb.write_char('>')
     }
-    Node::VoidElement(tag, attrs) => {
+    Node::Void(element) => {
       sb.write_char('<')
-      sb.write_string(tag.to_string())
-      render_attrs(sb, attrs)
+      sb.write_string(element.tag.to_string())
+      render_attrs(sb, element.attrs)
       sb.write_char('>')
     }
   }
@@ -80,15 +80,6 @@ fn Node::render_into(self : Node, sb : StringBuilder) -> Unit {
 ///|
 pub fn render(node : Node) -> String {
   let sb = StringBuilder::new()
-  node.render_into(sb)
-  sb.to_string()
-}
-
-///|
-pub fn render_nodes(nodes : Array[Node]) -> String {
-  let sb = StringBuilder::new()
-  for node in nodes {
-    node.render_into(sb)
-  }
+  render_node_into(node, sb)
   sb.to_string()
 }
