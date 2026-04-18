@@ -11,5 +11,5 @@
   "keywords": [],
   "description": "Typed functional HTML template DSL for MoonBit",
   "source": "src",
-  "warn-list": "-unused_constructor"
+  "warn-list": "-unused_constructor-27"
 }

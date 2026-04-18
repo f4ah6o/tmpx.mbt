@@ -273,17 +273,13 @@ pub enum Attr {
   KeyVal(String, String)
   Bool(String)
   ClassList(Array[String])
-}
-pub impl Eq for Attr
-pub impl Show for Attr
+} derive(Eq, Show)
 
 pub struct ElementNode {
   tag : Tag
   attrs : Array[Attr]
   children : Array[Node]
-}
-pub impl Eq for ElementNode
-pub impl Show for ElementNode
+} derive(Eq, Show)
 
 pub(all) enum MxSwap {
   InnerHTML
@@ -294,10 +290,8 @@ pub(all) enum MxSwap {
   AfterEnd
   Delete
   None
-}
+} derive(Eq, Show)
 pub fn MxSwap::to_string(Self) -> String
-pub impl Eq for MxSwap
-pub impl Show for MxSwap
 
 pub enum Node {
   Element(ElementNode)
@@ -305,17 +299,13 @@ pub enum Node {
   Text(String)
   Raw(String)
   Fragment(Array[Node])
-}
-pub impl Eq for Node
-pub impl Show for Node
+} derive(Eq, Show)
 
 pub enum Part {
   PAttr(Attr)
   PChild(Node)
   PText(String)
-}
-pub impl Eq for Part
-pub impl Show for Part
+} derive(Eq, Show)
 
 pub enum Tag {
   Html
@@ -460,19 +450,15 @@ pub enum Tag {
   Tt
   Xmp
   Custom(String)
-}
+} derive(Eq, Show)
 pub fn Tag::custom(String) -> Self
 pub fn Tag::is_void(Self) -> Bool
 pub fn Tag::to_string(Self) -> String
-pub impl Eq for Tag
-pub impl Show for Tag
 
 pub struct VoidNode {
   tag : Tag
   attrs : Array[Attr]
-}
-pub impl Eq for VoidNode
-pub impl Show for VoidNode
+} derive(Eq, Show)
 
 // Type aliases
 pub type AttrSet = Array[Attr]
