@@ -49,6 +49,71 @@ pub fn alt(value : String) -> Attr {
 }
 
 ///|
+pub fn role(value : String) -> Attr {
+  Attr::KeyVal("role", value)
+}
+
+///|
+pub fn aria(name : String, value : String) -> Attr {
+  Attr::KeyVal("aria-" + name, value)
+}
+
+///|
+pub fn data(name : String, value : String) -> Attr {
+  Attr::KeyVal("data-" + name, value)
+}
+
+///|
+pub fn type_(value : String) -> Attr {
+  Attr::KeyVal("type", value)
+}
+
+///|
+pub fn name_(value : String) -> Attr {
+  Attr::KeyVal("name", value)
+}
+
+///|
+pub fn value_(value : String) -> Attr {
+  Attr::KeyVal("value", value)
+}
+
+///|
+pub fn method_(value : String) -> Attr {
+  Attr::KeyVal("method", value)
+}
+
+///|
+pub fn action(value : String) -> Attr {
+  Attr::KeyVal("action", value)
+}
+
+///|
+pub fn placeholder(value : String) -> Attr {
+  Attr::KeyVal("placeholder", value)
+}
+
+///|
+pub fn required() -> Attr {
+  Attr::Bool("required")
+}
+
+///|
+pub fn disabled() -> Attr {
+  Attr::Bool("disabled")
+}
+
+///|
+pub fn checked() -> Attr {
+  Attr::Bool("checked")
+}
+
+///|
+pub fn selected() -> Attr {
+  Attr::Bool("selected")
+}
+
+///|
 /// Normalize attribute list into AttrSet.
 /// - class merged, deduped, empty removed (first occurrence wins)
 /// - id last-wins and is single

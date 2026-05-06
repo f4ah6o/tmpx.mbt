@@ -6,11 +6,19 @@ pub fn a_parts(Array[Part]) -> Node
 
 pub fn abbr_parts(Array[Part]) -> Node
 
+pub fn action(String) -> Attr
+
+pub fn add_class(Node, String) -> Node
+
 pub fn address_parts(Array[Part]) -> Node
 
 pub fn alt(String) -> Attr
 
+pub fn append_child(Node, Node) -> Node
+
 pub fn area_attrs(Array[Attr]) -> Node
+
+pub fn aria(String, String) -> Attr
 
 pub fn article_parts(Array[Part]) -> Node
 
@@ -38,7 +46,11 @@ pub fn br_attrs(Array[Attr]) -> Node
 
 pub fn button_parts(Array[Part]) -> Node
 
+pub fn canonical(String) -> Node
+
 pub fn caption_parts(Array[Part]) -> Node
+
+pub fn checked() -> Attr
 
 pub fn cite_parts(Array[Part]) -> Node
 
@@ -51,6 +63,8 @@ pub fn code_parts(Array[Part]) -> Node
 pub fn col_attrs(Array[Attr]) -> Node
 
 pub fn colgroup_parts(Array[Part]) -> Node
+
+pub fn data(String, String) -> Attr
 
 pub fn data_parts(Array[Part]) -> Node
 
@@ -66,9 +80,13 @@ pub fn dfn_parts(Array[Part]) -> Node
 
 pub fn dialog_parts(Array[Part]) -> Node
 
+pub fn disabled() -> Attr
+
 pub fn div_parts(Array[Part]) -> Node
 
 pub fn dl_parts(Array[Part]) -> Node
+
+pub fn doctype_html(Node) -> String
 
 pub fn dt_parts(Array[Part]) -> Node
 
@@ -110,6 +128,8 @@ pub fn hr_attrs(Array[Attr]) -> Node
 
 pub fn href(String) -> Attr
 
+pub fn html_document(Array[Node], Array[Node]) -> Node
+
 pub fn html_parts(Array[Part]) -> Node
 
 pub fn i_parts(Array[Part]) -> Node
@@ -136,6 +156,10 @@ pub fn link_attrs(Array[Attr]) -> Node
 
 pub fn main_parts(Array[Part]) -> Node
 
+pub fn map_attrs(Node, (Array[Attr]) -> Array[Attr]) -> Node
+
+pub fn map_children(Node, (Array[Node]) -> Array[Node]) -> Node
+
 pub fn map_parts(Array[Part]) -> Node
 
 pub fn mark_parts(Array[Part]) -> Node
@@ -144,7 +168,15 @@ pub fn menu_parts(Array[Part]) -> Node
 
 pub fn meta_attrs(Array[Attr]) -> Node
 
+pub fn meta_charset_utf8() -> Node
+
+pub fn meta_viewport() -> Node
+
 pub fn meter_parts(Array[Part]) -> Node
+
+pub fn method_(String) -> Attr
+
+pub fn module_script(String) -> Node
 
 pub fn mx_get(String) -> Attr
 
@@ -156,11 +188,19 @@ pub fn mx_target(String) -> Attr
 
 pub fn mx_trigger(String) -> Attr
 
+pub fn name_(String) -> Attr
+
 pub fn nav_parts(Array[Part]) -> Node
 
 pub fn noscript_parts(Array[Part]) -> Node
 
 pub fn object_parts(Array[Part]) -> Node
+
+pub fn og_description(String) -> Node
+
+pub fn og_image(String) -> Node
+
+pub fn og_title(String) -> Node
 
 pub fn ol_parts(Array[Part]) -> Node
 
@@ -182,7 +222,11 @@ pub fn part_text(String) -> Part
 
 pub fn picture_parts(Array[Part]) -> Node
 
+pub fn placeholder(String) -> Attr
+
 pub fn pre_parts(Array[Part]) -> Node
+
+pub fn prepend_child(Node, Node) -> Node
 
 pub fn progress_parts(Array[Part]) -> Node
 
@@ -190,7 +234,15 @@ pub fn q_parts(Array[Part]) -> Node
 
 pub fn raw(String) -> Node
 
+pub fn raw_trusted_html(String) -> Node
+
+pub fn raw_unsafe(String) -> Node
+
 pub fn render(Node) -> String
+
+pub fn required() -> Attr
+
+pub fn role(String) -> Attr
 
 pub fn rp_parts(Array[Part]) -> Node
 
@@ -208,6 +260,10 @@ pub fn section_parts(Array[Part]) -> Node
 
 pub fn select_parts(Array[Part]) -> Node
 
+pub fn selected() -> Attr
+
+pub fn set_id(Node, String) -> Node
+
 pub fn slot_parts(Array[Part]) -> Node
 
 pub fn small_parts(Array[Part]) -> Node
@@ -219,6 +275,8 @@ pub fn span_parts(Array[Part]) -> Node
 pub fn src(String) -> Attr
 
 pub fn strong_parts(Array[Part]) -> Node
+
+pub fn stylesheet(String) -> Node
 
 pub fn sub_parts(Array[Part]) -> Node
 
@@ -252,6 +310,10 @@ pub fn tr_parts(Array[Part]) -> Node
 
 pub fn track_attrs(Array[Attr]) -> Node
 
+pub fn twitter_card(String) -> Node
+
+pub fn type_(String) -> Attr
+
 pub fn u_parts(Array[Part]) -> Node
 
 pub fn ul_parts(Array[Part]) -> Node
@@ -260,11 +322,17 @@ pub fn unsafe_custom_element(String, Array[Part]) -> Node
 
 pub fn unsafe_custom_void(String, Array[Attr]) -> Node
 
+pub fn value_(String) -> Attr
+
 pub fn var_parts(Array[Part]) -> Node
 
 pub fn video_parts(Array[Part]) -> Node
 
 pub fn wbr_attrs(Array[Attr]) -> Node
+
+pub fn with_attr(Node, Attr) -> Node
+
+pub fn wrap(Node, (Node) -> Node) -> Node
 
 // Errors
 

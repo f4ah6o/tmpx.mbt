@@ -53,6 +53,16 @@ pub fn raw(content : String) -> Node {
 }
 
 ///|
+pub fn raw_trusted_html(content : String) -> Node {
+  raw(content)
+}
+
+///|
+pub fn raw_unsafe(content : String) -> Node {
+  raw(content)
+}
+
+///|
 pub fn fragment(children : Array[Node]) -> Node {
   Node::Fragment(children)
 }
