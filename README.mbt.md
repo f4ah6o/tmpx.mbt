@@ -3,14 +3,16 @@
 [![moonbit](https://img.shields.io/badge/moonbit-f4ah6o/tmpx-informational)](https://mooncakes.io/docs/f4ah6o/tmpx)
 <!-- bdg:end -->
 
-Typed, functional HTML template DSL for MoonBit.
+Typed, functional, deterministic HTML view DSL for MoonBit.
 
 ## Features
 
 - **Type-safe tag/attribute construction** - avoid stringly-typed HTML where possible
 - **Functional composition** - build views from pure, immutable functions
+- **Immutable node transforms** - update attrs, children, and wrappers without rebuilding trees
 - **Deterministic rendering** - normalized attributes with fixed order
 - **Void safety by API shape** - void elements cannot accept children
+- **Document helpers** - generate `<html>`, metadata, links, and module scripts with small helpers
 - **mhx-only helpers** - explicit attribute helpers for mx-* integration
 
 ## Installation
@@ -18,7 +20,7 @@ Typed, functional HTML template DSL for MoonBit.
 Add to your `moon.pkg`:
 
 ```moon
-import "test" {
+import {
   "f4ah6o/tmpx/tmpx" as @tmpx
 }
 ```
@@ -36,7 +38,7 @@ changes are unlikely but possible before 1.0.
 
 **Adoption notes:**
 - Start with v1 builders + common v2 tags; request new builder batches as needed.
-- Deferred areas: `svg`, `math`, `canvas`, `script`, `style`.
+- Deferred areas: `svg`, `math`, `canvas`, and general `script` / `style` DSLs. Thin escape-hatch helpers like `module_script` are available; see Generic Document Helpers.
 - Have feedback? See `src/tmpx/FEEDBACK.md`.
 
 ## Basic Usage
@@ -88,6 +90,21 @@ render(node)
 // Hello <b>World</b>
 ```
 
+## Safety Boundary
+
+`text()` and `part_text()` always escape HTML. Attribute values are escaped on render.
+
+`raw()` is for trusted HTML only. Do not pass user-generated content to `raw()`.
+Use `text()` / `part_text()` for untrusted content.
+
+`raw_unsafe()` is a naming alias for `raw()` — it produces identical output but makes
+the unsafe nature of the content explicit at the callsite. There is no safety difference
+between the two; use whichever name best communicates intent.
+
+```mbt
+raw_unsafe("<b>unsafe</b>")
+```
+
 ## Attribute Helpers
 
 ```mbt
@@ -97,11 +114,43 @@ id_("main")
 href("/page")
 src("/image.png")
 alt("Logo")
+role("navigation")
+aria("label", "Main navigation")
+data("doc-id", "intro")
+type_("email")
+name_("email")
+value_("hello")
+action("/submit")
+method_("post")
+placeholder("you@example.com")
+required()
+disabled()
+checked()
+selected()
 attr("data-id", "123")
 bool_attr("required")
 ```
 
 For any other attribute, use `attr(name, value)`.
+
+## Immutable Node Updates
+
+tmpx can update already-built trees without mutating the original value:
+
+```mbt
+let page = div_parts([part_text("Body")])
+let framed = wrap(
+  set_id(add_class(page, "card elevated"), "main"),
+  fn(node) { section_parts([part_attr(class_("frame")), part_child(node)]) },
+)
+```
+
+Available helpers:
+
+- `with_attr`, `map_attrs`
+- `add_class`, `set_id`
+- `append_child`, `prepend_child`, `map_children`
+- `wrap`
 
 ## mhx Integration (mx-*)
 
@@ -112,6 +161,42 @@ mx_target("#pane")
 mx_trigger("click")
 mx_swap(InnerHTML)
 ```
+
+tmpx owns static HTML tree construction and deterministic rendering.
+mhx owns client-side hypermedia execution.
+
+tmpx only exposes `mx-*` attribute helpers. It does not configure or execute the mhx runtime,
+and it remains usable without mhx.
+
+## Generic Document Helpers
+
+```mbt
+let document = doctype_html(
+  with_attr(
+    html_document(
+      [
+        meta_charset_utf8(),
+        meta_viewport(),
+        title_parts([part_text("Docs")]),
+        canonical("https://example.com/docs"),
+        stylesheet("/site.css"),
+        module_script("/app.js"),
+      ],
+      [main_parts([part_text("Hello")])],
+    ),
+    attr("lang", "en"),
+  ),
+)
+```
+
+Additional metadata helpers:
+
+- `og_title`
+- `og_description`
+- `og_image`
+- `twitter_card`
+
+These helpers stay generic. They do not add papyr-specific page, nav, or relation APIs to tmpx core.
 
 ## Supported Tags
 
@@ -124,6 +209,39 @@ Use `unsafe_custom_*` only for experimental/custom elements.
 render(node) -> String
 ```
 
+## Use cases
+
+### Markdown / document rendering
+
+tmpx is a safe rendering target for Markdown or documentation ASTs.
+A renderer can map trusted structural nodes to tmpx elements while keeping user text escaped by default.
+Only insert raw HTML through explicit `Raw` helpers, and only for trusted content.
+
+Typical mappings:
+
+- heading -> `h1_parts` / `h2_parts`
+- paragraph -> `p_parts`
+- emphasis / strong -> `em_parts` / `strong_parts`
+- inline code / code block -> `code_parts` / `pre_parts`
+- link / image -> `a_parts + href` / `img_attrs + src + alt`
+- lists / tables -> `ul_parts`, `ol_parts`, `table_parts`, ...
+
+### Focused example shapes
+
+- `basic_page` - document shell + layout
+- `form_post` - forms, common attrs, deterministic output
+- `mhx_counter` - static `mx-*` attributes without runtime ownership
+- `docs_page` - nav + article + code block layout
+- `golden_snapshot` - stable HTML for snapshot or golden tests
+
+### papyr boundary
+
+tmpx owns generic HTML primitives and document helpers such as `html_document`,
+`stylesheet`, `canonical`, and OGP metadata helpers.
+
+papyr-specific concepts such as document navigation, table of contents, breadcrumbs,
+and relation links should live in papyr.mbt or an adapter package built on top of tmpx.
+
 ## Migration notes
 
 See `src/tmpx/MIGRATION.md` for migration strategy and behavior differences.
@@ -131,4 +249,3 @@ See `src/tmpx/MIGRATION.md` for migration strategy and behavior differences.
 ## License
 
 Apache-2.0
-
