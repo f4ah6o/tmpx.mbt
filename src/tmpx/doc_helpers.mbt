@@ -9,10 +9,18 @@ fn meta_property(name : String, content : String) -> Node {
 }
 
 ///|
+fn push_child_parts(parts : Array[Part], nodes : Array[Node]) -> Array[Part] {
+  for n in nodes {
+    parts.push(part_child(n))
+  }
+  parts
+}
+
+///|
 pub fn html_document(head : Array[Node], body : Array[Node]) -> Node {
   html_parts([
-    part_child(head_parts([part_child(fragment(head))])),
-    part_child(body_parts([part_child(fragment(body))])),
+    part_child(head_parts(push_child_parts([], head))),
+    part_child(body_parts(push_child_parts([], body))),
   ])
 }
 

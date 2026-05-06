@@ -234,8 +234,6 @@ pub fn q_parts(Array[Part]) -> Node
 
 pub fn raw(String) -> Node
 
-pub fn raw_trusted_html(String) -> Node
-
 pub fn raw_unsafe(String) -> Node
 
 pub fn render(Node) -> String

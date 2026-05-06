@@ -124,7 +124,7 @@ tmpx is in **beta**. The following contracts are frozen:
 ### Public helper APIs (contract)
 
 - Parts: `part_attr`, `part_child`, `part_text`
-- Content: `text`, `raw`, `raw_trusted_html`, `raw_unsafe`, `fragment`
+- Content: `text`, `raw`, `raw_unsafe`, `fragment`
 - Attributes: `attr`, `bool_attr`, `class_`, `class_list`, `id_`, `href`, `src`, `alt`
 - Common attribute helpers: `role`, `aria`, `data`, `type_`, `name_`, `value_`,
   `action`, `method_`, `placeholder`, `required`, `disabled`, `checked`, `selected`

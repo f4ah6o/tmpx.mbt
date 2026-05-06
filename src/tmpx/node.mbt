@@ -53,11 +53,8 @@ pub fn raw(content : String) -> Node {
 }
 
 ///|
-pub fn raw_trusted_html(content : String) -> Node {
-  raw(content)
-}
-
-///|
+/// Naming alias for raw(). Use when the unsafe nature of the content should be
+/// visible at the callsite. Produces the same output as raw().
 pub fn raw_unsafe(content : String) -> Node {
   raw(content)
 }

@@ -11,17 +11,20 @@ test "text and attribute values escape by default" {
 }
 
 ///|
-test "raw aliases remain explicit unsafe escape hatches" {
+test "raw_unsafe is a naming alias for raw" {
+  let a = raw("<b>test</b>")
+  let b = raw_unsafe("<b>test</b>")
+  inspect(render(a), content=render(b))
+}
+
+///|
+test "raw and raw_unsafe produce identical output" {
   let node = fragment([
     text("<safe>"),
     raw("<b>raw</b>"),
-    raw_trusted_html("<i>trusted</i>"),
     raw_unsafe("<u>unsafe</u>"),
   ])
-  inspect(
-    render(node),
-    content="&lt;safe&gt;<b>raw</b><i>trusted</i><u>unsafe</u>",
-  )
+  inspect(render(node), content="&lt;safe&gt;<b>raw</b><u>unsafe</u>")
 }
 
 ///|

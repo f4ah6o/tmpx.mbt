@@ -38,8 +38,7 @@ changes are unlikely but possible before 1.0.
 
 **Adoption notes:**
 - Start with v1 builders + common v2 tags; request new builder batches as needed.
-- Deferred areas: `svg`, `math`, `canvas`, and general `script` / `style` builders.
-- Thin document helpers such as `module_script("/app.js")` are available without widening tmpx into a general script DSL.
+- Deferred areas: `svg`, `math`, `canvas`, and general `script` / `style` DSLs. Thin escape-hatch helpers like `module_script` are available; see Generic Document Helpers.
 - Have feedback? See `src/tmpx/FEEDBACK.md`.
 
 ## Basic Usage
@@ -98,10 +97,11 @@ render(node)
 `raw()` is for trusted HTML only. Do not pass user-generated content to `raw()`.
 Use `text()` / `part_text()` for untrusted content.
 
-If you want the danger to be visible at the callsite, tmpx also exposes:
+`raw_unsafe()` is a naming alias for `raw()` — it produces identical output but makes
+the unsafe nature of the content explicit at the callsite. There is no safety difference
+between the two; use whichever name best communicates intent.
 
 ```mbt
-raw_trusted_html("<b>trusted</b>")
 raw_unsafe("<b>unsafe</b>")
 ```
 
