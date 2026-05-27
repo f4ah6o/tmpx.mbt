@@ -242,6 +242,36 @@ tmpx owns generic HTML primitives and document helpers such as `html_document`,
 papyr-specific concepts such as document navigation, table of contents, breadcrumbs,
 and relation links should live in papyr.mbt or an adapter package built on top of tmpx.
 
+## Browser-side Wasm preview
+
+`src/wasm_preview` is a small adapter package for browser previews. It accepts a
+minimal JSON document:
+
+```json
+{
+  "title": "Preview",
+  "body": [
+    { "type": "h1", "text": "Heading" },
+    { "type": "p", "text": "Paragraph" },
+    { "type": "code", "text": "let x = 1" },
+    { "type": "a", "href": "/docs", "text": "Docs" },
+    { "type": "ul", "items": ["one", "two"] },
+    { "type": "ol", "items": ["first", "second"] }
+  ]
+}
+```
+
+Use `render_fragment(json)` for an HTML fragment or `render_doc(json)` for a
+complete document string. Invalid JSON and unsupported shapes return the stable
+safe fragment `<p>Invalid preview document</p>`.
+
+The browser demo lives in `examples/wasm-preview`. It uses Vite only to load the
+MoonBit Wasm output and wire a textarea to a preview pane.
+
+Safety boundary: this adapter never maps user input to `raw()` / `raw_unsafe()`.
+All text and link attributes are passed through tmpx builders, so tmpx escaping
+remains the only path from JSON input to rendered HTML.
+
 ## Migration notes
 
 See `src/tmpx/MIGRATION.md` for migration strategy and behavior differences.
