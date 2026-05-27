@@ -1,0 +1,14 @@
+import {
+  "moonbitlang/core/json",
+  "f4ah6o/tmpx/tmpx",
+}
+
+options(
+  link: {
+    "wasm-gc": {
+      "exports": [ "render_fragment", "render_doc" ],
+      "use-js-builtin-string": true,
+    },
+    "js": { "exports": [ "render_fragment", "render_doc" ], "format": "esm" },
+  },
+)
