@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "moon -C ../.. build --target wasm-gc && vite build",
+    "dev": "moon -C ../.. build --target wasm-gc && wrangler --install-skills=false pages dev dist --compatibility-date 2026-05-27",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.14",
+    "wrangler": "^4.0.0"
+  }
+}

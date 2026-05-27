@@ -272,6 +272,21 @@ Safety boundary: this adapter never maps user input to `raw()` / `raw_unsafe()`.
 All text and link attributes are passed through tmpx builders, so tmpx escaping
 remains the only path from JSON input to rendered HTML.
 
+## Cloudflare Pages demo
+
+`examples/cloudflare-pages-demo` runs the same `/hello` and `/search` interaction
+shape as the Cloudflare Worker sample, but uses Cloudflare Pages Functions.
+
+```bash
+cd examples/cloudflare-pages-demo
+npm install
+npm run build
+npm run dev
+```
+
+The build script compiles `src/wasm_preview` with `moon build --target wasm-gc`
+before Vite bundles the static Pages assets.
+
 ## Migration notes
 
 See `src/tmpx/MIGRATION.md` for migration strategy and behavior differences.
