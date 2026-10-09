@@ -1,6 +1,7 @@
 # Keep papyr-specific rendering APIs outside tmpx core
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -100,3 +101,7 @@ papyr.mbt
 - Moving papyr into tmpx
 - Creating a full documentation framework in tmpx
 - Adding routing, content loading, or relation graph logic to tmpx
+
+## 解決方法
+
+PR #10 (commit ec62c49) で README "### papyr boundary" 節を追加し、tmpx は generic primitive (`html_document`, `stylesheet`, OGP helpers 等) のみを保持、document navigation / TOC / breadcrumbs 等の papyr-specific concept は papyr.mbt 側に置く境界を明文化済み。main a016981 で再確認。

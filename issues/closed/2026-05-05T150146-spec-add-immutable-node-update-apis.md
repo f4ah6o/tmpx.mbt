@@ -1,6 +1,7 @@
 # Add immutable Node update APIs
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -75,3 +76,7 @@ wrap(node: Node, wrapper: (Node) -> Node) -> Node
 - Full HTML validation
 - Diffing or virtual DOM behavior
 - Runtime DOM patching
+
+## 解決方法
+
+PR #10 (commit ec62c49) で `src/tmpx/node_update.mbt` に `with_attr` / `map_attrs` / `add_class` / `set_id` / `append_child` / `prepend_child` / `map_children` / `wrap` を実装。`src/tmpx/node_update_test.mbt` で immutability・AttrSet normalization・void への no-op を検証済み。main a016981 で再確認。

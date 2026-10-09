@@ -1,6 +1,7 @@
 # Document tmpx as a safe Markdown and document rendering target
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -75,3 +76,7 @@ Markdown table -> table_parts / thead_parts / tbody_parts / tr_parts / th_parts 
 - HTML sanitization
 - Full document site framework
 - papyr-specific rendering APIs
+
+## 解決方法
+
+PR #10 (commit ec62c49) で README "### Markdown / document rendering" 節を追加し、Markdown AST → tmpx builder の typical mapping (heading -> `h1_parts` 等) と escape-by-default の安全性を文書化済み。main a016981 で再確認。

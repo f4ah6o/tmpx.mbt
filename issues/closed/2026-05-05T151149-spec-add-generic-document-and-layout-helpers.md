@@ -1,6 +1,7 @@
 # Add generic document and layout helpers
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -77,3 +78,7 @@ twitter_card(value: String) -> Node
 - papyr-specific page model
 - Routing
 - Asset bundling
+
+## 解決方法
+
+PR #10 (commit ec62c49) で `src/tmpx/doc_helpers.mbt` に `html_document` / `doctype_html` / `meta_charset_utf8` / `meta_viewport` / `stylesheet` / `canonical` / `module_script` / `og_title` / `og_description` / `og_image` / `twitter_card` を実装。`src/tmpx/doc_helpers_test.mbt` で deterministic render を検証済み。main a016981 で再確認。

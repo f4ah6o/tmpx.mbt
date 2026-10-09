@@ -1,6 +1,7 @@
 # Proposal: Position tmpx.mbt as the deterministic View contract layer for MoonBit web apps
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -146,3 +147,7 @@ tmpx becomes the stable MoonBit View layer for:
 - generated UI
 - mhx-enabled hypermedia views
 - deterministic snapshot-tested HTML output
+
+## 解決方法
+
+PR #10 (merge commit 8778e04) で提案した6項目すべてが実装済み: immutable update APIs (`src/tmpx/node_update.mbt`)、document/layout helpers (`src/tmpx/doc_helpers.mbt`)、属性 helper 拡充 (`src/tmpx/attr.mbt`)、Raw safety boundary (`raw_unsafe` alias + `src/tmpx/safety_boundary_test.mbt` + README)、tmpx/mhx 境界 (README "mhx Integration (mx-*)")、focused examples (`src/tmpx/use_cases_test.mbt` + README use cases)。main a016981 で再確認。

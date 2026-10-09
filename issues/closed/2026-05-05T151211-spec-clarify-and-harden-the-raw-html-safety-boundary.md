@@ -1,6 +1,7 @@
 # Clarify and harden the Raw HTML safety boundary
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -75,3 +76,7 @@ Add focused tests for:
 - Markdown parsing
 - CSP management
 - Runtime browser security policy
+
+## 解決方法
+
+PR #10 (commit ec62c49 + review fix 58c4c24) で README に "`raw()` is for trusted HTML only" を明記、`raw_unsafe` naming alias を追加。`src/tmpx/safety_boundary_test.mbt` で text/part_text の escape と alias の同一出力を検証済み。main a016981 で再確認。

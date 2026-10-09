@@ -1,6 +1,7 @@
 # Document the tmpx and mhx responsibility boundary
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -64,3 +65,7 @@ tmpx only exposes `mx-*` attribute helpers. It does not construct, configure, or
 - Adding browser-side DOM patching to tmpx
 - Adding htmx helper surface
 - Making mhx a hard dependency for basic tmpx usage
+
+## 解決方法
+
+PR #10 (commit ec62c49) で README "## mhx Integration (mx-*)" 節を追加 ("mhx owns client-side hypermedia execution. tmpx only exposes mx-* attribute helpers...")。`src/tmpx/AGENTS.md` §1.1 にも境界を明文化済み。main a016981 で再確認。

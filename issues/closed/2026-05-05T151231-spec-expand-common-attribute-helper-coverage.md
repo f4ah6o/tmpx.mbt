@@ -1,6 +1,7 @@
 # Expand common attribute helper coverage
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -89,3 +90,7 @@ div_parts([
 - Full typed attribute grammar
 - Element-specific attribute validation
 - Replacing `attr(name, value)`
+
+## 解決方法
+
+PR #10 (commit ec62c49) で `src/tmpx/attr.mbt` に `role` / `aria` / `data` / `type_` / `name_` / `value_` / `method_` / `action` / `placeholder` / `required` / `disabled` / `checked` / `selected` を実装。`src/tmpx/attr_helpers_test.mbt` で deterministic な出力を検証済み。main a016981 で再確認。

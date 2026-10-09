@@ -1,6 +1,7 @@
 # Add focused examples for common tmpx use cases
 
 Created: 2026-05-05
+Completed: 2026-10-09
 
 Model: gh-migrate
 
@@ -85,3 +86,7 @@ Shows how deterministic rendering can be used for snapshot / golden tests.
 - Router
 - Asset bundler setup
 - Browser-side runtime implementation
+
+## 解決方法
+
+PR #10 (commit ec62c49) で `src/tmpx/use_cases_test.mbt` に basic_page / form_post / mhx_counter / docs_page / golden_snapshot の5つの focused example を snapshot test として実装 (独立した examples/ パッケージではなく test として着地)。README "Focused example shapes" に一覧を記載済み。main a016981 で再確認。
