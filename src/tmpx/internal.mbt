@@ -26,10 +26,10 @@ fn fold_parts(parts : Array[Part]) -> (AttrSet, Array[Node]) {
 ///|
 fn element(tag : Tag, parts : Array[Part]) -> Node {
   let (attrs, children) = fold_parts(parts)
-  Node::Element({ tag, attrs, children })
+  Node::Element({ tag, attrs, children, })
 }
 
 ///|
 fn void_element(tag : Tag, attrs : Array[Attr]) -> Node {
-  Node::Void({ tag, attrs: normalize_attrs(attrs) })
+  Node::Void({ tag, attrs: normalize_attrs(attrs), })
 }

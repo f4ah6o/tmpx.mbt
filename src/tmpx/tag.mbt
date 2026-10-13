@@ -143,7 +143,7 @@ pub enum Tag {
   Tt
   Xmp
   Custom(String)
-} derive(Show, Eq)
+} derive(Show, Eq, Debug)
 
 ///|
 pub fn Tag::to_string(self : Tag) -> String {

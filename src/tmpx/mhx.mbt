@@ -21,7 +21,7 @@ pub(all) enum MxSwap {
   Delete
   /// Do nothing with the response
   None
-} derive(Show, Eq)
+} derive(Show, Eq, Debug)
 
 ///|
 /// Convert MxSwap to its string representation

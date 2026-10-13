@@ -3,7 +3,7 @@ pub enum Attr {
   KeyVal(String, String)
   Bool(String)
   ClassList(Array[String])
-} derive(Show, Eq)
+} derive(Show, Eq, Debug)
 
 ///|
 pub type AttrSet = Array[Attr]
