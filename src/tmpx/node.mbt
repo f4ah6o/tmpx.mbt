@@ -3,13 +3,13 @@ pub struct ElementNode {
   tag : Tag
   attrs : AttrSet
   children : Array[Node]
-} derive(Show, Eq)
+} derive(Show, Eq, Debug)
 
 ///|
 pub struct VoidNode {
   tag : Tag
   attrs : AttrSet
-} derive(Show, Eq)
+} derive(Show, Eq, Debug)
 
 ///|
 pub enum Node {
@@ -18,14 +18,14 @@ pub enum Node {
   Text(String)
   Raw(String)
   Fragment(Array[Node])
-} derive(Show, Eq)
+} derive(Show, Eq, Debug)
 
 ///|
 pub enum Part {
   PAttr(Attr)
   PChild(Node)
   PText(String)
-} derive(Show, Eq)
+} derive(Show, Eq, Debug)
 
 ///|
 pub fn part_attr(attr : Attr) -> Part {
